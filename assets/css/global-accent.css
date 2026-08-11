@@ -1,0 +1,183 @@
+/* Global accent system — based on the approved portfolio blue #1677B8 */
+:root {
+  --portfolio-accent: #1677B8;
+  --portfolio-accent-dark: #0f5f95;
+  --portfolio-accent-soft: #eef7fc;
+  --portfolio-accent-soft-2: #f5fafe;
+  --portfolio-accent-border: #b9d9ec;
+  --portfolio-accent-muted: #5f93b6;
+}
+
+/* Global contrast accents */
+a:not(.btn):not(.contact-links a) {
+  text-decoration-color: color-mix(in srgb, var(--portfolio-accent) 45%, transparent);
+}
+
+.kicker,
+.section-title p,
+.block-kicker,
+#contact .kicker {
+  color: var(--portfolio-accent) !important;
+}
+
+.hero h1 span,
+.hero .headline span,
+.info-card p strong,
+#education .info-grid > div:first-child > .info-card p strong {
+  color: var(--portfolio-accent) !important;
+}
+
+.section-title > span,
+.brand-mark {
+  background: linear-gradient(145deg, #0d3657, #164f75) !important;
+}
+
+.main-nav a::after {
+  background: var(--portfolio-accent) !important;
+}
+
+/* Skills */
+#skills .skill-card {
+  border-top-color: var(--portfolio-accent) !important;
+}
+
+#skills .skill-card h3::after {
+  background: var(--portfolio-accent) !important;
+}
+
+#skills .skill-card li {
+  border-color: #bfd5e4 !important;
+  color: #415d72 !important;
+}
+
+#skills .skill-card li:hover {
+  border-color: var(--portfolio-accent) !important;
+  background: var(--portfolio-accent-soft) !important;
+  color: #153f5c !important;
+  box-shadow: 0 5px 12px rgba(22, 119, 184, .10) !important;
+}
+
+/* Experience blocks and technology badges */
+.experience-block {
+  --accent: var(--portfolio-accent) !important;
+  --accent-soft: var(--portfolio-accent-soft) !important;
+}
+
+.experience-block::before {
+  background: linear-gradient(145deg, var(--portfolio-accent), var(--portfolio-accent-dark)) !important;
+}
+
+.experience-body .tech,
+.stack-highlight {
+  border-color: #d7e5ef !important;
+  background: linear-gradient(90deg, var(--portfolio-accent-soft-2), #fff) !important;
+}
+
+.experience-body .tech span,
+.stack-highlight span {
+  border: 1px solid var(--portfolio-accent-border) !important;
+  background: var(--portfolio-accent-soft) !important;
+  color: #285a7d !important;
+}
+
+.experience-body .tech span:hover,
+.stack-highlight span:hover {
+  border-color: var(--portfolio-accent) !important;
+  color: var(--portfolio-accent-dark) !important;
+}
+
+.duration-badge {
+  border-color: rgba(115, 184, 226, .62) !important;
+  background: rgba(22, 119, 184, .22) !important;
+  color: #e4f4ff !important;
+}
+
+/* Projects */
+#projects .project-card,
+#projects .project-card:nth-child(2) {
+  --project-accent: var(--portfolio-accent) !important;
+  --project-soft: var(--portfolio-accent-soft) !important;
+  --project-chip: #f5f9fc !important;
+}
+
+.project-category,
+.project-main-icon,
+.project-detail-icon,
+.project-footer-icon {
+  color: var(--portfolio-accent) !important;
+}
+
+.project-chip:hover {
+  border-color: var(--portfolio-accent-border) !important;
+  color: var(--portfolio-accent-dark) !important;
+  background: var(--portfolio-accent-soft) !important;
+}
+
+/* Education and languages */
+#education .info-grid > div:first-child > .info-card {
+  border-left-color: var(--portfolio-accent) !important;
+}
+
+#education .info-grid > div:first-child > .info-card::after,
+#education .tags span::before {
+  background-color: var(--portfolio-accent) !important;
+}
+
+#education .info-grid > div:first-child > .info-card::before,
+#education .language-icon {
+  background-color: var(--portfolio-accent-soft) !important;
+}
+
+#education .language-dot {
+  border-color: #aac9dc !important;
+}
+
+#education .language-dot.is-active {
+  border-color: var(--portfolio-accent) !important;
+  background: var(--portfolio-accent) !important;
+}
+
+#education .tags span {
+  border-color: #c8dce9 !important;
+  background: #fff !important;
+  color: #39566b !important;
+}
+
+#education .tags span:hover {
+  border-color: var(--portfolio-accent-border) !important;
+  background: var(--portfolio-accent-soft) !important;
+  color: var(--portfolio-accent-dark) !important;
+  box-shadow: 0 6px 14px rgba(22, 119, 184, .09) !important;
+}
+
+/* Domains / small accent surfaces */
+.domain-grid span:hover,
+.tags span:hover {
+  border-color: var(--portfolio-accent-border) !important;
+}
+
+/* Contact */
+#contact .kicker {
+  color: #6fb3df !important;
+}
+
+#contact .contact-links a::after {
+  color: #7fc0e8 !important;
+}
+
+#contact .contact-links a:hover::after {
+  color: #b7def5 !important;
+}
+
+#contact .contact-links a::before {
+  border-color: rgba(126, 191, 230, .28) !important;
+  background: rgba(22, 119, 184, .22) !important;
+  color: #dff3ff !important;
+}
+
+/* Keep availability green: it communicates status, not branding. */
+#contact .contact-grid > div:first-child::after {
+  border-color: rgba(81, 201, 149, .58) !important;
+  background: rgba(31, 100, 65, .38) !important;
+  color: #dfffea !important;
+}
