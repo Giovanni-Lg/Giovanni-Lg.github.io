@@ -123,9 +123,20 @@ a:not(.btn):not(.contact-links a) {
   background-color: var(--portfolio-accent) !important;
 }
 
-#education .info-grid > div:first-child > .info-card::before,
+#education .info-grid > div:first-child > .info-card::before {
+  background-color: #f3f7fa !important;
+  border: 1px solid #d9e5ed !important;
+  box-shadow: none !important;
+}
+
 #education .language-icon {
-  background-color: var(--portfolio-accent-soft) !important;
+  width: 36px !important;
+  height: 36px !important;
+  background-color: #f3f7fa !important;
+  border: 1px solid #d8e4ec !important;
+  box-shadow: none !important;
+  background-size: 18px 18px !important;
+  filter: saturate(.72) contrast(.96) !important;
 }
 
 #education .language-dot {
