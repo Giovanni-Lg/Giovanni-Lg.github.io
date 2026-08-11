@@ -47,6 +47,76 @@ a:not(.btn):not(.contact-links a) {
   background: linear-gradient(90deg, var(--portfolio-accent), var(--portfolio-cyan)) !important;
 }
 
+/* Hero social actions */
+.hero-actions {
+  gap: 10px !important;
+}
+
+.hero-actions .btn {
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  gap: 9px !important;
+  min-height: 42px !important;
+  padding: 10px 16px !important;
+  border-radius: 6px !important;
+  font-weight: 750 !important;
+  line-height: 1 !important;
+  box-shadow: none !important;
+  transition: transform .18s ease, background-color .18s ease, border-color .18s ease, color .18s ease, box-shadow .18s ease !important;
+}
+
+.hero-actions .btn::before {
+  content: "";
+  width: 17px;
+  height: 17px;
+  flex: 0 0 17px;
+  background-color: currentColor;
+  -webkit-mask-repeat: no-repeat;
+  mask-repeat: no-repeat;
+  -webkit-mask-position: center;
+  mask-position: center;
+  -webkit-mask-size: contain;
+  mask-size: contain;
+}
+
+.hero-actions .btn.primary {
+  border: 1px solid #0d5f96 !important;
+  background: #126da8 !important;
+  color: #ffffff !important;
+}
+
+.hero-actions .btn.primary::before {
+  -webkit-mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='black' d='M12 .7a11.3 11.3 0 0 0-3.57 22c.57.1.77-.25.77-.55v-2.16c-3.15.69-3.81-1.34-3.81-1.34-.52-1.31-1.26-1.66-1.26-1.66-1.03-.7.08-.69.08-.69 1.14.08 1.74 1.17 1.74 1.17 1.01 1.73 2.65 1.23 3.3.94.1-.73.4-1.23.72-1.51-2.51-.29-5.15-1.26-5.15-5.59 0-1.24.44-2.25 1.17-3.04-.12-.29-.51-1.44.11-3 0 0 .95-.3 3.11 1.16A10.8 10.8 0 0 1 12 6.1c.96 0 1.92.13 2.82.38 2.16-1.46 3.11-1.16 3.11-1.16.62 1.56.23 2.71.11 3 .73.79 1.17 1.8 1.17 3.04 0 4.34-2.65 5.29-5.17 5.57.41.35.77 1.04.77 2.1v3.12c0 .31.2.66.78.55A11.3 11.3 0 0 0 12 .7Z'/%3E%3C/svg%3E");
+  mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='black' d='M12 .7a11.3 11.3 0 0 0-3.57 22c.57.1.77-.25.77-.55v-2.16c-3.15.69-3.81-1.34-3.81-1.34-.52-1.31-1.26-1.66-1.26-1.66-1.03-.7.08-.69.08-.69 1.14.08 1.74 1.17 1.74 1.17 1.01 1.73 2.65 1.23 3.3.94.1-.73.4-1.23.72-1.51-2.51-.29-5.15-1.26-5.15-5.59 0-1.24.44-2.25 1.17-3.04-.12-.29-.51-1.44.11-3 0 0 .95-.3 3.11 1.16A10.8 10.8 0 0 1 12 6.1c.96 0 1.92.13 2.82.38 2.16-1.46 3.11-1.16 3.11-1.16.62 1.56.23 2.71.11 3 .73.79 1.17 1.8 1.17 3.04 0 4.34-2.65 5.29-5.17 5.57.41.35.77 1.04.77 2.1v3.12c0 .31.2.66.78.55A11.3 11.3 0 0 0 12 .7Z'/%3E%3C/svg%3E");
+}
+
+.hero-actions .btn.secondary {
+  border: 1px solid #9ecce6 !important;
+  background: #f4f9fc !important;
+  color: #0f659e !important;
+}
+
+.hero-actions .btn.secondary::before {
+  -webkit-mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='black' d='M5.34 3.5A2.34 2.34 0 1 1 .66 3.5a2.34 2.34 0 0 1 4.68 0ZM.99 7.24h4.7V22H.99V7.24Zm7.33 0h4.5v2.02h.06c.63-1.19 2.16-2.44 4.45-2.44 4.76 0 5.64 3.13 5.64 7.2V22h-4.69v-7.08c0-1.69-.03-3.86-2.35-3.86-2.36 0-2.72 1.84-2.72 3.74V22H8.32V7.24Z'/%3E%3C/svg%3E");
+  mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='black' d='M5.34 3.5A2.34 2.34 0 1 1 .66 3.5a2.34 2.34 0 0 1 4.68 0ZM.99 7.24h4.7V22H.99V7.24Zm7.33 0h4.5v2.02h.06c.63-1.19 2.16-2.44 4.45-2.44 4.76 0 5.64 3.13 5.64 7.2V22h-4.69v-7.08c0-1.69-.03-3.86-2.35-3.86-2.36 0-2.72 1.84-2.72 3.74V22H8.32V7.24Z'/%3E%3C/svg%3E");
+}
+
+.hero-actions .btn.primary:hover {
+  transform: translateY(-2px) !important;
+  background: #0f5f95 !important;
+  border-color: #0b5384 !important;
+  box-shadow: 0 7px 16px rgba(22,119,184,.16) !important;
+}
+
+.hero-actions .btn.secondary:hover {
+  transform: translateY(-2px) !important;
+  background: #ffffff !important;
+  border-color: var(--portfolio-accent) !important;
+  color: var(--portfolio-accent-dark) !important;
+  box-shadow: 0 7px 16px rgba(22,119,184,.11) !important;
+}
+
 /* Soft modern surfaces */
 .hero {
   background:
