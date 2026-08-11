@@ -1,4 +1,4 @@
-/* Contact / footer — modern but aligned with the restrained blue portfolio theme */
+/* Contact / footer — modern, restrained and compatible with the existing HTML */
 
 #contact.contact {
   position: relative;
@@ -15,11 +15,11 @@
   bottom: -150px;
   width: 360px;
   height: 360px;
-  border: 1px solid rgba(255,255,255,.055);
+  border: 1px solid rgba(255,255,255,.05);
   border-radius: 50%;
   box-shadow:
-    0 0 0 36px rgba(255,255,255,.018),
-    0 0 0 72px rgba(255,255,255,.012);
+    0 0 0 36px rgba(255,255,255,.016),
+    0 0 0 72px rgba(255,255,255,.01);
   pointer-events: none;
 }
 
@@ -32,16 +32,20 @@
   align-items: center;
 }
 
-#contact .contact-intro .kicker {
+#contact .contact-grid > div:first-child {
+  position: relative;
+}
+
+#contact .kicker {
   margin-bottom: 14px;
-  color: #76a8e8;
+  color: #78a9df;
   font-size: .8rem;
   font-weight: 800;
   letter-spacing: .15em;
   text-transform: uppercase;
 }
 
-#contact .contact-intro h2 {
+#contact h2 {
   max-width: 620px;
   margin: 0 0 22px;
   color: #ffffff;
@@ -50,143 +54,113 @@
   letter-spacing: -.035em;
 }
 
-#contact .contact-intro > p:not(.kicker) {
+#contact .contact-grid > div:first-child > p:last-child {
   max-width: 640px;
   margin: 0;
-  color: #c9d6e3;
+  color: #c7d5e2;
   font-size: 1rem;
   line-height: 1.75;
 }
 
-.contact-availability {
+#contact .contact-grid > div:first-child::after {
+  content: "●  Ouvert aux opportunités";
   display: inline-flex;
   align-items: center;
-  gap: 10px;
   min-height: 38px;
   margin-top: 26px;
   padding: 8px 15px;
-  border: 1px solid rgba(130, 178, 228, .36);
+  border: 1px solid rgba(130, 178, 228, .34);
   border-radius: 999px;
   background: rgba(6, 28, 49, .22);
-  color: #e5eef7;
+  color: #dfeaf4;
   font-weight: 700;
+  letter-spacing: .005em;
 }
 
-.contact-availability::before {
-  content: "";
-  width: 8px;
-  height: 8px;
-  border-radius: 50%;
-  background: #51c995;
-  box-shadow: 0 0 0 4px rgba(81, 201, 149, .09);
-}
-
-.contact-panel {
-  border: 1px solid rgba(135, 180, 226, .28);
-  background: rgba(6, 31, 54, .24);
-  box-shadow: 0 18px 42px rgba(2, 20, 36, .15);
-}
-
-.contact-panel-header {
-  display: flex;
-  align-items: center;
-  gap: 16px;
-  padding: 24px 26px;
-  border-bottom: 1px solid rgba(255,255,255,.11);
-}
-
-.contact-panel-header-icon,
-.contact-item-icon {
+#contact .contact-links {
+  position: relative;
   display: grid;
-  place-items: center;
-  flex: 0 0 auto;
-  color: #d8e9fa;
-  background: rgba(61, 125, 190, .2);
-  border: 1px solid rgba(125, 174, 222, .18);
+  padding: 72px 24px 12px;
+  border: 1px solid rgba(135, 180, 226, .26);
+  background: rgba(6, 31, 54, .24);
+  box-shadow: 0 18px 42px rgba(2, 20, 36, .14);
 }
 
-.contact-panel-header-icon {
-  width: 46px;
-  height: 46px;
-  border-radius: 10px;
-}
-
-.contact-item-icon {
-  width: 38px;
-  height: 38px;
-  border-radius: 8px;
-}
-
-.contact-panel svg {
-  width: 20px;
-  height: 20px;
-  fill: none;
-  stroke: currentColor;
-  stroke-width: 1.7;
-  stroke-linecap: round;
-  stroke-linejoin: round;
-}
-
-.contact-panel-header h3 {
-  margin: 0 0 3px;
+#contact .contact-links::before {
+  content: "Restons en contact";
+  position: absolute;
+  top: 22px;
+  left: 24px;
   color: #ffffff;
   font-size: 1.28rem;
-}
-
-.contact-panel-header p {
-  margin: 0;
-  color: #aebfd0;
-}
-
-.contact-item {
-  display: grid;
-  grid-template-columns: 38px minmax(0, 1fr) auto;
-  gap: 14px;
-  align-items: center;
-  min-height: 74px;
-  padding: 15px 26px;
-  border-bottom: 1px solid rgba(255,255,255,.1);
-  color: inherit;
-  text-decoration: none;
-  transition: background-color .18s ease, padding-left .18s ease;
-}
-
-.contact-item:last-child {
-  border-bottom: 0;
-}
-
-.contact-item:hover {
-  padding-left: 31px;
-  background: rgba(255,255,255,.035);
-}
-
-.contact-item-copy {
-  min-width: 0;
-}
-
-.contact-item-label {
-  display: block;
-  margin-bottom: 3px;
-  color: #ffffff;
   font-weight: 800;
 }
 
-.contact-item-value {
-  display: block;
-  overflow: hidden;
-  color: #b8c9d9;
-  text-overflow: ellipsis;
-  white-space: nowrap;
+#contact .contact-links::after {
+  content: "Email, téléphone et profils professionnels";
+  position: absolute;
+  top: 48px;
+  left: 24px;
+  color: #9fb4c8;
+  font-size: .84rem;
 }
 
-.contact-item-arrow {
+#contact .contact-links a {
+  position: relative;
+  display: grid;
+  grid-template-columns: 38px minmax(0, 1fr) auto;
+  align-items: center;
+  min-height: 70px;
+  padding: 14px 6px;
+  border-bottom: 1px solid rgba(255,255,255,.1);
+  color: #dbe7f2;
+  font-weight: 700;
+  text-decoration: none;
+  transition: background-color .18s ease, padding-left .18s ease, color .18s ease;
+}
+
+#contact .contact-links a:last-child {
+  border-bottom: 0;
+}
+
+#contact .contact-links a::before {
+  width: 34px;
+  height: 34px;
+  display: grid;
+  place-items: center;
+  border: 1px solid rgba(125, 174, 222, .18);
+  border-radius: 8px;
+  background: rgba(61, 125, 190, .16);
+  color: #d8e9fa;
+  font-size: 1rem;
+  font-weight: 800;
+}
+
+#contact .contact-links a:nth-child(1)::before { content: "✉"; }
+#contact .contact-links a:nth-child(2)::before { content: "☎"; }
+#contact .contact-links a:nth-child(3)::before { content: "GH"; font-size: .72rem; }
+#contact .contact-links a:nth-child(4)::before { content: "in"; font-size: .78rem; }
+
+#contact .contact-links a::after {
+  content: "↗";
   color: #82aee0;
-  font-size: 1.35rem;
+  font-size: 1.25rem;
   line-height: 1;
   transition: transform .18s ease, color .18s ease;
 }
 
-.contact-item:hover .contact-item-arrow {
+#contact .contact-links a:nth-child(1)::after,
+#contact .contact-links a:nth-child(2)::after {
+  content: "";
+}
+
+#contact .contact-links a:hover {
+  padding-left: 10px;
+  background: rgba(255,255,255,.028);
+  color: #ffffff;
+}
+
+#contact .contact-links a:hover::after {
   transform: translate(3px, -3px);
   color: #b9d3ef;
 }
@@ -223,34 +197,28 @@
     padding: 58px 0 48px;
   }
 
-  #contact .contact-intro h2 {
+  #contact h2 {
     font-size: 2.35rem;
   }
 
-  .contact-panel-header,
-  .contact-item {
-    padding-left: 18px;
-    padding-right: 18px;
+  #contact .contact-links {
+    padding-left: 16px;
+    padding-right: 16px;
   }
 
-  .contact-item:hover {
-    padding-left: 21px;
-  }
-
-  .contact-item-value {
-    white-space: normal;
+  #contact .contact-links a {
+    grid-template-columns: 34px minmax(0, 1fr) auto;
     overflow-wrap: anywhere;
   }
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .contact-item,
-  .contact-item-arrow {
+  #contact .contact-links a,
+  #contact .contact-links a::after {
     transition: none;
   }
 
-  .contact-item:hover,
-  .contact-item:hover .contact-item-arrow {
+  #contact .contact-links a:hover::after {
     transform: none;
   }
 }
