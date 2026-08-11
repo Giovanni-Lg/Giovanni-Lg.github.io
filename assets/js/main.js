@@ -18,6 +18,11 @@ experienceFixTheme.rel = 'stylesheet';
 experienceFixTheme.href = 'assets/css/experience-fix.css';
 document.head.appendChild(experienceFixTheme);
 
+const educationModernTheme = document.createElement('link');
+educationModernTheme.rel = 'stylesheet';
+educationModernTheme.href = 'assets/css/education-modern.css';
+document.head.appendChild(educationModernTheme);
+
 const menuToggle = document.querySelector('.menu-toggle');
 const mainNav = document.querySelector('.main-nav');
 const navLinks = document.querySelectorAll('.main-nav a');
