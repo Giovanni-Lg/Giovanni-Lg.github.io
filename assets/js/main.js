@@ -1,8 +1,3 @@
-const vibrantTheme = document.createElement('link');
-vibrantTheme.rel = 'stylesheet';
-vibrantTheme.href = 'assets/css/vibrant.css';
-document.head.appendChild(vibrantTheme);
-
 const menuToggle = document.querySelector('.menu-toggle');
 const mainNav = document.querySelector('.main-nav');
 const navLinks = document.querySelectorAll('.main-nav a');
