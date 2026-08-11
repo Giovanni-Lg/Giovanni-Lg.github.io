@@ -1,3 +1,8 @@
+const balancedTheme = document.createElement('link');
+balancedTheme.rel = 'stylesheet';
+balancedTheme.href = 'assets/css/balanced.css';
+document.head.appendChild(balancedTheme);
+
 const menuToggle = document.querySelector('.menu-toggle');
 const mainNav = document.querySelector('.main-nav');
 const navLinks = document.querySelectorAll('.main-nav a');
