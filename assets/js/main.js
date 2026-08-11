@@ -33,10 +33,20 @@ educationLayoutFixTheme.rel = 'stylesheet';
 educationLayoutFixTheme.href = 'assets/css/education-layout-fix.css';
 document.head.appendChild(educationLayoutFixTheme);
 
+const educationBalancedTheme = document.createElement('link');
+educationBalancedTheme.rel = 'stylesheet';
+educationBalancedTheme.href = 'assets/css/education-balanced.css';
+document.head.appendChild(educationBalancedTheme);
+
 const projectsModernTheme = document.createElement('link');
 projectsModernTheme.rel = 'stylesheet';
 projectsModernTheme.href = 'assets/css/projects-modern.css';
 document.head.appendChild(projectsModernTheme);
+
+const globalAccentTheme = document.createElement('link');
+globalAccentTheme.rel = 'stylesheet';
+globalAccentTheme.href = 'assets/css/global-accent.css';
+document.head.appendChild(globalAccentTheme);
 
 const menuToggle = document.querySelector('.menu-toggle');
 const mainNav = document.querySelector('.main-nav');
