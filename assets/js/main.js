@@ -32,6 +32,31 @@ if (year) {
   year.textContent = String(new Date().getFullYear());
 }
 
+const languageLevels = [5, 4, 3];
+const languageRows = document.querySelectorAll('#education .clean-list li');
+
+languageRows.forEach((row, index) => {
+  const name = row.querySelector('strong')?.textContent?.trim() ?? '';
+  const rawText = row.textContent?.trim() ?? '';
+  const description = rawText
+    .replace(name, '')
+    .replace(/^\s*[—-]\s*/, '')
+    .trim();
+  const level = languageLevels[index] ?? 3;
+  const dots = Array.from({ length: 5 }, (_, dotIndex) =>
+    `<span class="language-dot${dotIndex < level ? ' is-active' : ''}"></span>`,
+  ).join('');
+
+  row.innerHTML = `
+    <span class="language-icon" aria-hidden="true"></span>
+    <span class="language-copy">
+      <strong>${name}</strong>
+      <span class="language-description">— ${description}</span>
+    </span>
+    <span class="language-rating" aria-label="Niveau ${level} sur 5">${dots}</span>
+  `;
+});
+
 const formatExperienceDuration = (startYear, startMonth, endYear = null, endMonth = null) => {
   const now = new Date();
   const targetYear = endYear ?? now.getFullYear();
