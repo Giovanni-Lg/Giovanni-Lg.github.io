@@ -1,0 +1,283 @@
+/* Final balanced visual layer: simple, clear, restrained */
+:root {
+  --balanced-navy: #0b2f4f;
+  --balanced-blue: #2563eb;
+  --balanced-blue-soft: #f3f7fd;
+  --balanced-cyan: #0e7490;
+  --balanced-teal: #0f766e;
+  --balanced-purple: #6d4cc7;
+  --balanced-ink: #1d3346;
+  --balanced-muted: #5f7385;
+  --balanced-line: #d8e2eb;
+  --balanced-surface: #f7f9fb;
+}
+
+/* Approximately 80% of the previous typographic scale */
+html {
+  font-size: 80%;
+}
+
+body {
+  color: var(--balanced-ink);
+  background: #fff;
+}
+
+/* Remove decorative circles / ornamental backgrounds */
+#about,
+#skills,
+#projects,
+#education,
+.expertise-domain {
+  background-image: none !important;
+}
+
+#about,
+#education {
+  background-color: #f8fafc !important;
+}
+
+#skills,
+#projects,
+.expertise-domain {
+  background-color: #fff !important;
+}
+
+.hero::after,
+.skill-card::before,
+.experience-aside::before {
+  display: none !important;
+}
+
+/* Simpler global card language: square containers */
+.skill-card,
+.project-card,
+.info-card,
+.experience-card,
+.experience-block,
+.experience-summary,
+.stack-highlight {
+  border-radius: 0 !important;
+}
+
+/* Rounded treatment only for small interactive elements */
+.skill-card li,
+.tags span,
+.domain-grid span,
+.stack-highlight span,
+.btn,
+.project-card .label {
+  border-radius: 999px !important;
+}
+
+/* Section markers stay compact but calmer */
+.section-title > span,
+.brand-mark {
+  border-radius: 4px !important;
+  background: var(--balanced-navy) !important;
+  box-shadow: 0 6px 14px rgba(11,47,79,.12) !important;
+}
+
+.section-title:hover > span {
+  transform: none !important;
+}
+
+.section-title p,
+.kicker {
+  color: var(--balanced-blue) !important;
+}
+
+/* Technical skills: minimal cards, color mostly in headings + chips */
+.skill-card {
+  --skill-accent: var(--balanced-blue);
+  --skill-soft: #f4f7fb;
+  background: #fff !important;
+  border: 1px solid var(--balanced-line) !important;
+  border-top: 2px solid var(--skill-accent) !important;
+  box-shadow: 0 8px 22px rgba(20,45,67,.045) !important;
+  transform: none !important;
+}
+
+.skill-card:nth-child(1),
+.skill-card:nth-child(2) {
+  --skill-accent: var(--balanced-blue);
+  --skill-soft: #f3f7ff;
+}
+
+.skill-card:nth-child(3) {
+  --skill-accent: var(--balanced-purple);
+  --skill-soft: #f7f5fc;
+}
+
+.skill-card:nth-child(4),
+.skill-card:nth-child(6),
+.skill-card:nth-child(8) {
+  --skill-accent: var(--balanced-teal);
+  --skill-soft: #f2f8f7;
+}
+
+.skill-card:nth-child(5),
+.skill-card:nth-child(7) {
+  --skill-accent: var(--balanced-cyan);
+  --skill-soft: #f2f8fa;
+}
+
+.skill-card:hover {
+  transform: none !important;
+  background: #fff !important;
+  border-color: var(--balanced-line) !important;
+  border-top-color: var(--skill-accent) !important;
+  box-shadow: 0 8px 22px rgba(20,45,67,.045) !important;
+}
+
+.skill-card h3 {
+  color: var(--balanced-ink) !important;
+  transform: none !important;
+}
+
+.skill-card h3::after {
+  width: 24px !important;
+  background: var(--skill-accent) !important;
+}
+
+.skill-card:hover h3::after {
+  width: 36px !important;
+}
+
+.skill-card li {
+  color: #4e6578 !important;
+  background: #fff !important;
+  border: 1px solid color-mix(in srgb, var(--skill-accent) 22%, #d9e3eb) !important;
+  box-shadow: none !important;
+  transition:
+    transform .18s ease,
+    color .18s ease,
+    background-color .18s ease,
+    border-color .18s ease,
+    box-shadow .18s ease !important;
+}
+
+.skill-card li::before {
+  display: none !important;
+}
+
+.skill-card li:hover {
+  transform: translateY(-2px) !important;
+  color: color-mix(in srgb, var(--skill-accent) 78%, #213a4f) !important;
+  background: var(--skill-soft) !important;
+  border-color: color-mix(in srgb, var(--skill-accent) 45%, #d9e3eb) !important;
+  box-shadow: 0 5px 12px color-mix(in srgb, var(--skill-accent) 10%, transparent) !important;
+}
+
+/* About / education cards: neutral */
+.info-card,
+#about .info-card,
+#education .info-card {
+  background: #fff !important;
+  border: 1px solid var(--balanced-line) !important;
+  border-top: 1px solid var(--balanced-line) !important;
+  box-shadow: 0 7px 20px rgba(20,45,67,.04) !important;
+}
+
+.info-card:hover,
+#education .info-card:hover {
+  transform: none !important;
+  border-color: #c8d6e2 !important;
+  box-shadow: 0 9px 24px rgba(20,45,67,.06) !important;
+}
+
+/* Projects: one restrained blue family */
+.project-card,
+.project-card:nth-child(1),
+.project-card:nth-child(2) {
+  background: #fff !important;
+  border: 1px solid var(--balanced-line) !important;
+  border-top: 2px solid var(--balanced-blue) !important;
+  box-shadow: 0 8px 22px rgba(20,45,67,.05) !important;
+}
+
+.project-card:hover,
+.project-card:nth-child(1):hover,
+.project-card:nth-child(2):hover {
+  transform: none !important;
+  box-shadow: 0 10px 26px rgba(20,45,67,.07) !important;
+}
+
+.project-card .label,
+.project-card:nth-child(2) .label {
+  color: var(--balanced-blue) !important;
+  background: #f2f6fc !important;
+}
+
+/* Experience remains modern but calmer */
+.experience-aside,
+#experience .experience-card:nth-of-type(2) .experience-aside,
+#experience .experience-card:nth-of-type(3) .experience-aside {
+  background: var(--balanced-navy) !important;
+}
+
+.experience-aside::after {
+  background: var(--balanced-blue) !important;
+}
+
+.experience-block {
+  background: #fff !important;
+  box-shadow: 0 7px 18px rgba(20,45,67,.04) !important;
+}
+
+.experience-block:hover {
+  transform: translateY(-2px) !important;
+  box-shadow: 0 10px 24px rgba(20,45,67,.07) !important;
+}
+
+/* Tags outside skills: same calm palette */
+.tags span,
+.domain-grid span {
+  --tag-accent: var(--balanced-blue) !important;
+  --tag-soft: #f3f7fd !important;
+  background: #fff !important;
+  color: #4e6578 !important;
+  border-color: #d5e0e9 !important;
+}
+
+.tags span:hover,
+.domain-grid span:hover {
+  transform: translateY(-2px) !important;
+  color: var(--balanced-blue) !important;
+  background: #f3f7fd !important;
+  border-color: #a8c6ee !important;
+  box-shadow: 0 5px 12px rgba(37,99,235,.08) !important;
+}
+
+/* Tighter vertical rhythm to complement the smaller type */
+.section {
+  padding-top: 76px !important;
+  padding-bottom: 76px !important;
+}
+
+.section-title {
+  margin-bottom: 34px !important;
+}
+
+.hero-grid {
+  padding-top: 60px !important;
+  padding-bottom: 60px !important;
+}
+
+/* Keep scroll motion elegant and understated */
+.reveal {
+  transition-duration: .55s !important;
+}
+
+@media (max-width: 720px) {
+  html { font-size: 86%; }
+  .section { padding-top: 58px !important; padding-bottom: 58px !important; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .skill-card li,
+  .tags span,
+  .domain-grid span,
+  .experience-block {
+    transform: none !important;
+  }
+}
