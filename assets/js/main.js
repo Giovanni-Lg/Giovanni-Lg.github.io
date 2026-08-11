@@ -48,6 +48,11 @@ globalAccentTheme.rel = 'stylesheet';
 globalAccentTheme.href = 'assets/css/global-accent.css';
 document.head.appendChild(globalAccentTheme);
 
+const printTheme = document.createElement('link');
+printTheme.rel = 'stylesheet';
+printTheme.href = 'assets/css/print.css';
+document.head.appendChild(printTheme);
+
 const menuToggle = document.querySelector('.menu-toggle');
 const mainNav = document.querySelector('.main-nav');
 const navLinks = document.querySelectorAll('.main-nav a');
@@ -55,6 +60,29 @@ const year = document.querySelector('#year');
 
 if (year) {
   year.textContent = String(new Date().getFullYear());
+}
+
+const heroActions = document.querySelector('.hero-actions');
+
+if (heroActions) {
+  const pdfButton = document.createElement('button');
+  pdfButton.type = 'button';
+  pdfButton.className = 'pdf-export-btn';
+  pdfButton.setAttribute('aria-label', 'Exporter le portfolio en PDF');
+  pdfButton.innerHTML = `
+    <svg viewBox="0 0 24 24" aria-hidden="true">
+      <path d="M6 9V3h12v6"></path>
+      <path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"></path>
+      <path d="M6 14h12v7H6z"></path>
+    </svg>
+    <span>Exporter en PDF</span>
+  `;
+
+  pdfButton.addEventListener('click', () => {
+    window.print();
+  });
+
+  heroActions.appendChild(pdfButton);
 }
 
 const languageLevels = [5, 4, 3];
