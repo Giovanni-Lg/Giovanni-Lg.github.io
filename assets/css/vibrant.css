@@ -1,0 +1,289 @@
+/* Colorful refinement layer — subtle, modern and professional */
+:root {
+  --accent-blue: #2563eb;
+  --accent-cyan: #0891b2;
+  --accent-teal: #0f9f7f;
+  --accent-green: #16a34a;
+  --accent-purple: #7c3aed;
+  --accent-indigo: #4f46e5;
+  --accent-amber: #d97706;
+  --accent-rose: #db2777;
+}
+
+/* Give sections their own atmosphere instead of repeating white / gray */
+#about {
+  background:
+    radial-gradient(circle at 92% 12%, rgba(8,145,178,.07), transparent 26%),
+    linear-gradient(135deg, #f7fbff 0%, #f6fbfa 100%);
+}
+
+#skills {
+  position: relative;
+  overflow: hidden;
+  background:
+    radial-gradient(circle at 7% 8%, rgba(37,99,235,.07), transparent 22%),
+    radial-gradient(circle at 92% 82%, rgba(124,58,237,.055), transparent 24%),
+    #fff;
+}
+
+#experience {
+  background:
+    linear-gradient(180deg, rgba(241,247,253,.82), rgba(248,250,252,.96));
+}
+
+#projects {
+  background:
+    radial-gradient(circle at 87% 16%, rgba(15,159,127,.07), transparent 26%),
+    linear-gradient(145deg, #fff 0%, #f7fbfc 100%);
+}
+
+#education {
+  background:
+    radial-gradient(circle at 12% 22%, rgba(124,58,237,.05), transparent 24%),
+    #f8fafc;
+}
+
+/* Section markers cycle through subtle accent colors */
+.section-title > span {
+  transition: transform .22s ease, box-shadow .22s ease;
+}
+
+.section-title:hover > span {
+  transform: translateY(-2px) rotate(-2deg);
+  box-shadow: 0 12px 24px rgba(15,55,90,.18);
+}
+
+#about .section-title > span { background: linear-gradient(145deg, #0891b2, #0f6b8a); }
+#skills .section-title > span { background: linear-gradient(145deg, #2563eb, #4f46e5); }
+#experience .section-title > span { background: linear-gradient(145deg, #0b3558, #0f6b8a); }
+#projects .section-title > span { background: linear-gradient(145deg, #0f9f7f, #08745d); }
+#education .section-title > span { background: linear-gradient(145deg, #7c3aed, #5b21b6); }
+.expertise-domain .section-title > span { background: linear-gradient(145deg, #4f46e5, #7c3aed); }
+
+/* More visual personality in profile cards */
+#about .info-card {
+  position: relative;
+  overflow: hidden;
+  border-top: 3px solid transparent;
+}
+
+#about .info-card:first-child {
+  border-top-color: var(--accent-cyan);
+  background: linear-gradient(145deg, rgba(236,254,255,.75), #fff 36%);
+}
+
+#about .info-card:nth-child(2) {
+  border-top-color: var(--accent-purple);
+  background: linear-gradient(145deg, rgba(245,243,255,.8), #fff 36%);
+}
+
+/* Technical skill cards: every domain gets an identity */
+.skill-card {
+  --skill-accent: var(--accent-blue);
+  --skill-soft: #eff6ff;
+  position: relative;
+  overflow: hidden;
+  border-top: 3px solid var(--skill-accent);
+  transition:
+    transform .28s cubic-bezier(.2,.75,.2,1),
+    box-shadow .28s ease,
+    border-color .28s ease,
+    background-color .28s ease;
+}
+
+.skill-card:nth-child(1) { --skill-accent: #2563eb; --skill-soft: #eff6ff; }
+.skill-card:nth-child(2) { --skill-accent: #0891b2; --skill-soft: #ecfeff; }
+.skill-card:nth-child(3) { --skill-accent: #7c3aed; --skill-soft: #f5f3ff; }
+.skill-card:nth-child(4) { --skill-accent: #0f9f7f; --skill-soft: #ecfdf5; }
+.skill-card:nth-child(5) { --skill-accent: #d97706; --skill-soft: #fffbeb; }
+.skill-card:nth-child(6) { --skill-accent: #4f46e5; --skill-soft: #eef2ff; }
+.skill-card:nth-child(7) { --skill-accent: #db2777; --skill-soft: #fdf2f8; }
+.skill-card:nth-child(8) { --skill-accent: #16a34a; --skill-soft: #f0fdf4; }
+
+.skill-card::before {
+  content: "";
+  position: absolute;
+  width: 150px;
+  height: 150px;
+  right: -90px;
+  top: -90px;
+  border-radius: 50%;
+  background: color-mix(in srgb, var(--skill-accent) 7%, transparent);
+  transition: transform .35s ease, opacity .35s ease;
+  pointer-events: none;
+}
+
+.skill-card:hover {
+  transform: translateY(-7px);
+  border-color: var(--skill-accent);
+  box-shadow: 0 22px 46px color-mix(in srgb, var(--skill-accent) 13%, rgba(10,30,50,.08));
+  background: linear-gradient(145deg, var(--skill-soft), #fff 42%);
+}
+
+.skill-card:hover::before {
+  transform: scale(1.35);
+  opacity: .9;
+}
+
+.skill-card h3 {
+  position: relative;
+  display: inline-block;
+  transition: color .22s ease, transform .22s ease;
+}
+
+.skill-card h3::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -7px;
+  width: 28px;
+  height: 2px;
+  border-radius: 999px;
+  background: var(--skill-accent);
+  transition: width .28s ease;
+}
+
+.skill-card:hover h3 {
+  color: var(--skill-accent);
+  transform: translateX(2px);
+}
+
+.skill-card:hover h3::after {
+  width: 58px;
+}
+
+/* Skill chips now feel interactive */
+.skill-card li {
+  position: relative;
+  overflow: hidden;
+  cursor: default;
+  background: #fff;
+  border-color: color-mix(in srgb, var(--skill-accent) 18%, #dce7ef);
+  transition:
+    transform .18s ease,
+    color .18s ease,
+    background-color .18s ease,
+    border-color .18s ease,
+    box-shadow .18s ease;
+}
+
+.skill-card li::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(110deg, color-mix(in srgb, var(--skill-accent) 12%, transparent), transparent 65%);
+  opacity: 0;
+  transition: opacity .18s ease;
+  pointer-events: none;
+}
+
+.skill-card li:hover {
+  transform: translateY(-3px) scale(1.025);
+  color: color-mix(in srgb, var(--skill-accent) 82%, #10263b);
+  background: var(--skill-soft);
+  border-color: color-mix(in srgb, var(--skill-accent) 45%, #dce7ef);
+  box-shadow: 0 7px 16px color-mix(in srgb, var(--skill-accent) 12%, transparent);
+}
+
+.skill-card li:hover::before { opacity: 1; }
+
+/* Project cards get different accents rather than identical white cards */
+.project-card {
+  position: relative;
+  overflow: hidden;
+  border-top: 3px solid var(--accent-blue);
+}
+
+.project-card:nth-child(1) {
+  border-top-color: var(--accent-blue);
+  background: linear-gradient(145deg, #f4f8ff, #fff 36%);
+}
+
+.project-card:nth-child(2) {
+  border-top-color: var(--accent-teal);
+  background: linear-gradient(145deg, #f0fdf9, #fff 36%);
+}
+
+.project-card:hover {
+  transform: translateY(-7px) scale(1.006);
+}
+
+.project-card:nth-child(1):hover { box-shadow: 0 22px 44px rgba(37,99,235,.13); }
+.project-card:nth-child(2):hover { box-shadow: 0 22px 44px rgba(15,159,127,.13); }
+
+.project-card .label {
+  display: inline-flex;
+  padding: 5px 9px;
+  border-radius: 999px;
+  background: #edf5ff;
+}
+
+.project-card:nth-child(2) .label {
+  color: #08745d;
+  background: #e9faf5;
+}
+
+/* Education, languages and qualities */
+#education .info-card {
+  transition: transform .22s ease, border-color .22s ease, box-shadow .22s ease;
+}
+
+#education .info-card:hover {
+  transform: translateX(4px);
+  border-color: rgba(124,58,237,.25);
+  box-shadow: 0 14px 30px rgba(124,58,237,.07);
+}
+
+.tags span,
+.domain-grid span {
+  transition:
+    transform .18s ease,
+    color .18s ease,
+    background-color .18s ease,
+    border-color .18s ease,
+    box-shadow .18s ease;
+}
+
+.tags span:nth-child(4n+1), .domain-grid span:nth-child(4n+1) { --tag-accent: #2563eb; --tag-soft: #eff6ff; }
+.tags span:nth-child(4n+2), .domain-grid span:nth-child(4n+2) { --tag-accent: #0f9f7f; --tag-soft: #ecfdf5; }
+.tags span:nth-child(4n+3), .domain-grid span:nth-child(4n+3) { --tag-accent: #7c3aed; --tag-soft: #f5f3ff; }
+.tags span:nth-child(4n), .domain-grid span:nth-child(4n) { --tag-accent: #d97706; --tag-soft: #fffbeb; }
+
+.tags span:hover,
+.domain-grid span:hover {
+  transform: translateY(-3px);
+  color: var(--tag-accent);
+  background: var(--tag-soft);
+  border-color: color-mix(in srgb, var(--tag-accent) 38%, #cfdde8);
+  box-shadow: 0 8px 16px color-mix(in srgb, var(--tag-accent) 10%, transparent);
+}
+
+/* Experience company cards get slightly different side-panel character */
+#experience .experience-card:nth-of-type(2) .experience-aside {
+  background: linear-gradient(165deg, #0a355d, #0a2542 72%, #071d33);
+}
+
+#experience .experience-card:nth-of-type(3) .experience-aside {
+  background: linear-gradient(165deg, #153b52, #0b2b42 72%, #071f32);
+}
+
+/* A more colorful but still restrained expertise strip */
+.expertise-domain {
+  background:
+    radial-gradient(circle at 80% 30%, rgba(124,58,237,.065), transparent 24%),
+    radial-gradient(circle at 15% 72%, rgba(37,99,235,.055), transparent 22%),
+    linear-gradient(135deg, #fbfcff, #f8fbff);
+}
+
+/* Keep motion accessible */
+@media (prefers-reduced-motion: reduce) {
+  .skill-card,
+  .skill-card li,
+  .project-card,
+  .tags span,
+  .domain-grid span,
+  .section-title > span,
+  #education .info-card {
+    transform: none !important;
+  }
+}
