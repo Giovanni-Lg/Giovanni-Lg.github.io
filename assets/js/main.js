@@ -60,7 +60,7 @@ const experienceDurations = [
   {
     selector: '#experience .experience-card:nth-of-type(4) .experience-aside .date',
     label: '2020 – Décembre 2024',
-    duration: '≈ 4 ans',
+    duration: '4 ans',
   },
 ];
 
