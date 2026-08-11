@@ -8,6 +8,11 @@ skillContrastTheme.rel = 'stylesheet';
 skillContrastTheme.href = 'assets/css/skills-contrast.css';
 document.head.appendChild(skillContrastTheme);
 
+const experienceDurationTheme = document.createElement('link');
+experienceDurationTheme.rel = 'stylesheet';
+experienceDurationTheme.href = 'assets/css/experience-duration.css';
+document.head.appendChild(experienceDurationTheme);
+
 const menuToggle = document.querySelector('.menu-toggle');
 const mainNav = document.querySelector('.main-nav');
 const navLinks = document.querySelectorAll('.main-nav a');
@@ -17,9 +22,11 @@ if (year) {
   year.textContent = String(new Date().getFullYear());
 }
 
-const formatExperienceDuration = (startYear, startMonth) => {
+const formatExperienceDuration = (startYear, startMonth, endYear = null, endMonth = null) => {
   const now = new Date();
-  const totalMonths = (now.getFullYear() - startYear) * 12 + (now.getMonth() - startMonth);
+  const targetYear = endYear ?? now.getFullYear();
+  const targetMonth = endMonth ?? now.getMonth();
+  const totalMonths = Math.max(0, (targetYear - startYear) * 12 + (targetMonth - startMonth));
   const years = Math.floor(totalMonths / 12);
   const months = totalMonths % 12;
 
@@ -34,11 +41,30 @@ const formatExperienceDuration = (startYear, startMonth) => {
   return `${years} an${years > 1 ? 's' : ''} et ${months} mois`;
 };
 
-const orangeExperienceDate = document.querySelector('#experience .experience-card:first-of-type .experience-aside .date');
+const experienceDurations = [
+  {
+    selector: '#experience .experience-card:nth-of-type(2) .experience-aside .date',
+    label: "Septembre 2025 – Aujourd'hui",
+    duration: formatExperienceDuration(2025, 8),
+  },
+  {
+    selector: '#experience .experience-card:nth-of-type(3) .experience-aside .date',
+    label: "Décembre 2024 – Aujourd'hui",
+    duration: formatExperienceDuration(2024, 11),
+  },
+  {
+    selector: '#experience .experience-card:nth-of-type(4) .experience-aside .date',
+    label: '2020 – Décembre 2024',
+    duration: '≈ 4 ans',
+  },
+];
 
-if (orangeExperienceDate) {
-  orangeExperienceDate.textContent = `Septembre 2025 – Aujourd'hui · ${formatExperienceDuration(2025, 8)}`;
-}
+experienceDurations.forEach(({ selector, label, duration }) => {
+  const dateElement = document.querySelector(selector);
+  if (!dateElement) return;
+
+  dateElement.innerHTML = `<span class="experience-period">${label}</span><span class="duration-badge">${duration}</span>`;
+});
 
 if (menuToggle && mainNav) {
   menuToggle.addEventListener('click', () => {
