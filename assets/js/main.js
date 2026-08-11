@@ -17,6 +17,29 @@ if (year) {
   year.textContent = String(new Date().getFullYear());
 }
 
+const formatExperienceDuration = (startYear, startMonth) => {
+  const now = new Date();
+  const totalMonths = (now.getFullYear() - startYear) * 12 + (now.getMonth() - startMonth);
+  const years = Math.floor(totalMonths / 12);
+  const months = totalMonths % 12;
+
+  if (years === 0) {
+    return `${months} mois`;
+  }
+
+  if (months === 0) {
+    return `${years} an${years > 1 ? 's' : ''}`;
+  }
+
+  return `${years} an${years > 1 ? 's' : ''} et ${months} mois`;
+};
+
+const orangeExperienceDate = document.querySelector('#experience .experience-card:first-of-type .experience-aside .date');
+
+if (orangeExperienceDate) {
+  orangeExperienceDate.textContent = `Septembre 2025 – Aujourd'hui · ${formatExperienceDuration(2025, 8)}`;
+}
+
 if (menuToggle && mainNav) {
   menuToggle.addEventListener('click', () => {
     const isOpen = mainNav.classList.toggle('open');
