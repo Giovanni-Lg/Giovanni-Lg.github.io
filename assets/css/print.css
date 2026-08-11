@@ -1,8 +1,10 @@
 /* PDF export / print support */
 
-.pdf-export-btn {
+/* Hero actions: reuse the former PDF button treatment for external links. */
+.hero-actions .btn {
   display: inline-flex;
   align-items: center;
+  justify-content: center;
   gap: 9px;
   min-height: 42px;
   padding: 10px 16px;
@@ -12,25 +14,36 @@
   color: #0f5f95;
   font: inherit;
   font-weight: 750;
-  cursor: pointer;
+  text-decoration: none;
+  box-shadow: none;
   transition: transform .18s ease, background-color .18s ease, border-color .18s ease, box-shadow .18s ease;
 }
 
-.pdf-export-btn:hover {
+.hero-actions .btn.primary,
+.hero-actions .btn.secondary {
+  background: #eef7fc;
+  border-color: #b9d9ec;
+  color: #0f5f95;
+}
+
+.hero-actions .btn:hover,
+.hero-actions .btn.primary:hover,
+.hero-actions .btn.secondary:hover {
   transform: translateY(-2px);
   border-color: #1677b8;
   background: #ffffff;
+  color: #0f5f95;
   box-shadow: 0 7px 16px rgba(22, 119, 184, .12);
 }
 
-.pdf-export-btn svg {
-  width: 18px;
-  height: 18px;
-  fill: none;
-  stroke: currentColor;
-  stroke-width: 1.9;
-  stroke-linecap: round;
-  stroke-linejoin: round;
+.hero-actions .btn:focus-visible {
+  outline: 3px solid rgba(22, 119, 184, .22);
+  outline-offset: 3px;
+}
+
+/* The PDF action is no longer exposed in the portfolio UI. */
+.pdf-export-btn {
+  display: none !important;
 }
 
 @page {
@@ -288,7 +301,7 @@
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .pdf-export-btn:hover {
+  .hero-actions .btn:hover {
     transform: none;
   }
 }
