@@ -1,0 +1,73 @@
+/* Uniform technology badges across all experiences */
+.experience-body .tech {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px;
+  margin-top: 18px;
+  padding: 16px 18px !important;
+  border: 1px solid #dce7ef !important;
+  border-left: 0 !important;
+  border-radius: 0 !important;
+  background: linear-gradient(90deg, #f8fbff, #ffffff) !important;
+  color: #35506b !important;
+  box-shadow: none !important;
+}
+
+.experience-body .tech strong {
+  flex: 0 0 100%;
+  width: 100%;
+  margin: 0 0 2px;
+  color: #16324f !important;
+  font-weight: 750;
+}
+
+.experience-body .tech span {
+  display: inline-flex;
+  align-items: center;
+  min-height: 28px;
+  padding: 4px 10px;
+  border: 1px solid #bdd0e3 !important;
+  border-radius: 999px !important;
+  background: #ffffff !important;
+  color: #36566f !important;
+  font-size: .9rem;
+  font-weight: 600;
+  line-height: 1.2;
+  white-space: nowrap;
+  box-shadow: none !important;
+  transition: transform .18s ease, border-color .18s ease, background-color .18s ease, color .18s ease;
+}
+
+.experience-body .tech span:hover {
+  transform: translateY(-1px);
+  border-color: #6d9ed8 !important;
+  background: #f2f7fd !important;
+  color: #174e86 !important;
+}
+
+/* Keep Orange stack aligned with the same visual language */
+.experience-body .stack-highlight {
+  border-radius: 0 !important;
+}
+
+.experience-body .stack-highlight span,
+.experience-body .stack-highlight span:nth-of-type(5),
+.experience-body .stack-highlight span:nth-of-type(6),
+.experience-body .stack-highlight span:nth-last-child(-n+2) {
+  border: 1px solid #bdd0e3 !important;
+  background: #ffffff !important;
+  color: #36566f !important;
+  box-shadow: none !important;
+}
+
+@media (max-width: 640px) {
+  .experience-body .tech {
+    padding: 14px !important;
+    gap: 7px;
+  }
+
+  .experience-body .tech span {
+    white-space: normal;
+  }
+}
