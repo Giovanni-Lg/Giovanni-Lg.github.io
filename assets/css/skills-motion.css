@@ -84,28 +84,12 @@
   transform: translateX(0);
 }
 
-/* Small dot appears only when an item is hovered */
+/* No hover dot: keep chips visually clean */
 #skills .skill-card li::after {
-  content: "";
-  width: 0;
-  height: 0;
-  margin-left: 0;
-  border-radius: 50%;
-  background: var(--skill-accent, #2563eb);
-  display: inline-block;
-  vertical-align: middle;
-  opacity: 0;
-  transition: width .18s ease, height .18s ease, margin-left .18s ease, opacity .18s ease;
+  content: none !important;
+  display: none !important;
 }
 
-#skills .skill-card li:hover::after {
-  width: 5px;
-  height: 5px;
-  margin-left: 7px;
-  opacity: .85;
-}
-
-/* Keyboard users get the same treatment when a skill becomes focusable in the future */
 #skills .skill-card li:focus-visible {
   outline: 2px solid var(--skill-accent, #2563eb);
   outline-offset: 2px;
@@ -134,8 +118,7 @@
   }
 
   #skills .skill-card li,
-  #skills .skill-card li::before,
-  #skills .skill-card li::after {
+  #skills .skill-card li::before {
     transition: none;
   }
 }
