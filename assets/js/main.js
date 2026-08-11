@@ -3,6 +3,11 @@ balancedTheme.rel = 'stylesheet';
 balancedTheme.href = 'assets/css/balanced.css';
 document.head.appendChild(balancedTheme);
 
+const skillContrastTheme = document.createElement('link');
+skillContrastTheme.rel = 'stylesheet';
+skillContrastTheme.href = 'assets/css/skills-contrast.css';
+document.head.appendChild(skillContrastTheme);
+
 const menuToggle = document.querySelector('.menu-toggle');
 const mainNav = document.querySelector('.main-nav');
 const navLinks = document.querySelectorAll('.main-nav a');
