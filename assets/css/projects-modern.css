@@ -1,4 +1,4 @@
-/* Approved projects / prestations design */
+/* Projects / prestations — balanced with the global blue portfolio theme */
 
 #projects {
   background: #ffffff;
@@ -10,8 +10,10 @@
 }
 
 #projects .project-card {
-  --project-accent: #2563eb;
-  --project-soft: #eef4ff;
+  --project-accent: #2f67b3;
+  --project-soft: #f2f6fb;
+  --project-border: #d7e1eb;
+  --project-chip: #f4f7fa;
   --project-ink: #17324d;
   position: relative;
   display: flex;
@@ -19,16 +21,18 @@
   min-height: 100%;
   padding: 0 !important;
   overflow: hidden;
-  border: 1px solid #d6e1ec !important;
+  border: 1px solid var(--project-border) !important;
   border-radius: 0 !important;
   background: #ffffff !important;
-  box-shadow: 0 12px 28px rgba(17, 48, 76, .06) !important;
+  box-shadow: 0 10px 26px rgba(17, 48, 76, .055) !important;
   transform: none !important;
 }
 
+/* Keep a subtle identity without introducing another strong color family. */
 #projects .project-card:nth-child(2) {
-  --project-accent: #5b4df5;
-  --project-soft: #f1efff;
+  --project-accent: #587396;
+  --project-soft: #f3f5f8;
+  --project-chip: #f5f6f8;
 }
 
 #projects .project-card::before {
@@ -37,14 +41,14 @@
   top: 0;
   left: 0;
   right: 0;
-  height: 3px;
+  height: 2px;
   background: var(--project-accent);
 }
 
 #projects .project-card:hover {
   transform: none !important;
-  border-color: #cbd9e6 !important;
-  box-shadow: 0 16px 34px rgba(17, 48, 76, .08) !important;
+  border-color: #c9d6e2 !important;
+  box-shadow: 0 14px 30px rgba(17, 48, 76, .075) !important;
 }
 
 .project-shell {
@@ -56,7 +60,7 @@
 
 .project-header {
   display: grid;
-  grid-template-columns: minmax(0, 1fr) 56px;
+  grid-template-columns: minmax(0, 1fr) 54px;
   gap: 18px;
   align-items: start;
 }
@@ -65,15 +69,16 @@
   display: inline-flex;
   align-items: center;
   width: fit-content;
-  min-height: 26px;
+  min-height: 25px;
   margin-bottom: 14px;
-  padding: 5px 12px;
+  padding: 5px 11px;
+  border: 1px solid #dce5ee;
   border-radius: 999px;
   background: var(--project-soft);
-  color: var(--project-accent);
-  font-size: .78rem;
+  color: #365a7c;
+  font-size: .77rem;
   font-weight: 800;
-  letter-spacing: .045em;
+  letter-spacing: .04em;
   text-transform: uppercase;
 }
 
@@ -85,18 +90,19 @@
 }
 
 .project-main-icon {
-  width: 56px;
-  height: 56px;
+  width: 54px;
+  height: 54px;
   display: grid;
   place-items: center;
-  border-radius: 12px;
+  border: 1px solid #dce5ee;
+  border-radius: 10px;
   background: var(--project-soft);
   color: var(--project-accent);
 }
 
 .project-main-icon svg {
-  width: 28px;
-  height: 28px;
+  width: 27px;
+  height: 27px;
   fill: none;
   stroke: currentColor;
   stroke-width: 1.8;
@@ -157,14 +163,15 @@
   display: grid;
   place-items: center;
   flex: 0 0 auto;
+  border: 1px solid #dce5ee;
   border-radius: 50%;
-  background: var(--project-soft);
-  color: var(--project-accent);
+  background: #f7f9fb;
+  color: #416d9c;
 }
 
 .project-detail-icon svg {
-  width: 16px;
-  height: 16px;
+  width: 15px;
+  height: 15px;
   fill: none;
   stroke: currentColor;
   stroke-width: 1.8;
@@ -190,23 +197,22 @@
   align-items: center;
   min-height: 30px;
   padding: 6px 11px;
+  border: 1px solid #dce5ee;
   border-radius: 999px;
-  background: var(--project-soft);
-  color: #294b6b;
+  background: var(--project-chip);
+  color: #3b5872;
   font-size: .82rem;
   font-weight: 650;
   line-height: 1.2;
-  transition: transform .18s ease, box-shadow .18s ease, color .18s ease;
-}
-
-#projects .project-card:nth-child(2) .project-chip {
-  color: #3f36b8;
+  transition: transform .18s ease, border-color .18s ease, background-color .18s ease, color .18s ease, box-shadow .18s ease;
 }
 
 .project-chip:hover {
   transform: translateY(-2px);
-  color: var(--project-accent);
-  box-shadow: 0 6px 13px color-mix(in srgb, var(--project-accent) 12%, transparent);
+  border-color: #aebfd0;
+  background: #ffffff;
+  color: #214e79;
+  box-shadow: 0 5px 12px rgba(30, 64, 94, .08);
 }
 
 .project-footer {
@@ -215,8 +221,9 @@
   gap: 12px;
   margin-top: auto;
   padding: 14px 16px;
-  background: linear-gradient(90deg, var(--project-soft), rgba(255,255,255,.72));
-  color: #214463;
+  border: 1px solid #e1e7ed;
+  background: #f6f8fa;
+  color: #34516b;
   font-size: .9rem;
   font-weight: 700;
 }
@@ -227,10 +234,10 @@
   display: grid;
   place-items: center;
   flex: 0 0 auto;
+  border: 1px solid #dce5ee;
   border-radius: 50%;
   background: #ffffff;
-  color: var(--project-accent);
-  box-shadow: 0 2px 8px rgba(17, 48, 76, .06);
+  color: #416d9c;
 }
 
 .project-footer-icon svg {
@@ -252,28 +259,15 @@
 }
 
 @keyframes projectReveal {
-  from {
-    opacity: 0;
-    transform: translateY(16px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+  from { opacity: 0; transform: translateY(16px); }
+  to { opacity: 1; transform: translateY(0); }
 }
 
 @media (max-width: 1100px) {
-  .project-details-grid {
-    grid-template-columns: 1fr;
-    gap: 18px;
-  }
-
+  .project-details-grid { grid-template-columns: 1fr; gap: 18px; }
   .project-detail,
   .project-detail:first-child,
-  .project-detail:last-child {
-    padding: 0;
-  }
-
+  .project-detail:last-child { padding: 0; }
   .project-detail + .project-detail {
     padding-top: 18px;
     border-left: 0;
@@ -282,36 +276,14 @@
 }
 
 @media (max-width: 640px) {
-  .project-shell {
-    padding: 22px 20px 16px;
-  }
-
-  .project-header {
-    grid-template-columns: 1fr 46px;
-    gap: 12px;
-  }
-
-  .project-main-icon {
-    width: 46px;
-    height: 46px;
-    border-radius: 10px;
-  }
-
-  #projects .project-card h3 {
-    font-size: 1.28rem;
-  }
-
-  .project-summary {
-    font-size: .93rem;
-  }
+  .project-shell { padding: 22px 20px 16px; }
+  .project-header { grid-template-columns: 1fr 46px; gap: 12px; }
+  .project-main-icon { width: 46px; height: 46px; border-radius: 8px; }
+  #projects .project-card h3 { font-size: 1.28rem; }
+  .project-summary { font-size: .93rem; }
 }
 
 @media (prefers-reduced-motion: reduce) {
-  #projects .project-card.reveal.visible {
-    animation: none;
-  }
-
-  .project-chip:hover {
-    transform: none;
-  }
+  #projects .project-card.reveal.visible { animation: none; }
+  .project-chip:hover { transform: none; }
 }
