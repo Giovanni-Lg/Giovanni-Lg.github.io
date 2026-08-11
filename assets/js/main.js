@@ -13,6 +13,11 @@ experienceDurationTheme.rel = 'stylesheet';
 experienceDurationTheme.href = 'assets/css/experience-duration.css';
 document.head.appendChild(experienceDurationTheme);
 
+const experienceFixTheme = document.createElement('link');
+experienceFixTheme.rel = 'stylesheet';
+experienceFixTheme.href = 'assets/css/experience-fix.css';
+document.head.appendChild(experienceFixTheme);
+
 const menuToggle = document.querySelector('.menu-toggle');
 const mainNav = document.querySelector('.main-nav');
 const navLinks = document.querySelectorAll('.main-nav a');
