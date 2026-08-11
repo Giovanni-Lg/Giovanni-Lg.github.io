@@ -1,0 +1,52 @@
+/* Experience period + duration badge */
+.experience-aside .date {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 8px;
+  font-size: .98rem !important;
+  line-height: 1.45;
+  font-weight: 700 !important;
+}
+
+.experience-period {
+  color: #dceaff;
+}
+
+.duration-badge {
+  display: inline-flex;
+  align-items: center;
+  min-height: 24px;
+  padding: 3px 8px;
+  border: 1px solid rgba(147, 197, 253, .42);
+  border-radius: 999px;
+  background: rgba(59, 130, 246, .16);
+  color: #bfdbfe;
+  font-size: .86rem;
+  font-weight: 800;
+  letter-spacing: .01em;
+  white-space: nowrap;
+  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, .02);
+}
+
+.experience-card:nth-of-type(3) .duration-badge {
+  background: rgba(14, 165, 233, .15);
+  border-color: rgba(125, 211, 252, .4);
+  color: #bae6fd;
+}
+
+.experience-card:nth-of-type(4) .duration-badge {
+  background: rgba(45, 212, 191, .13);
+  border-color: rgba(94, 234, 212, .34);
+  color: #99f6e4;
+}
+
+@media (max-width: 720px) {
+  .experience-aside .date {
+    gap: 6px;
+  }
+
+  .duration-badge {
+    font-size: .82rem;
+  }
+}
