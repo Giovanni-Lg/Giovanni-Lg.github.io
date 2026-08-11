@@ -37,12 +37,20 @@
 }
 
 #contact .kicker {
-  margin-bottom: 14px;
-  color: #8bbcff;
+  display: inline-flex;
+  align-items: center;
+  width: fit-content;
+  min-height: 32px;
+  margin-bottom: 16px;
+  padding: 6px 11px;
+  border: 1px solid rgba(22,119,184,.62);
+  background: rgba(22,119,184,.16);
+  color: #c9ebff;
   font-size: .82rem;
-  font-weight: 800;
+  font-weight: 900;
   letter-spacing: .15em;
   text-transform: uppercase;
+  box-shadow: 0 0 0 1px rgba(22,119,184,.08);
 }
 
 #contact h2 {
@@ -123,10 +131,11 @@
 #contact .contact-links a {
   position: relative;
   display: grid;
-  grid-template-columns: 38px minmax(0, 1fr) auto;
+  grid-template-columns: 40px minmax(0, 1fr) auto;
+  column-gap: 18px;
   align-items: center;
-  min-height: 70px;
-  padding: 14px 6px;
+  min-height: 72px;
+  padding: 14px 10px;
   border-bottom: 1px solid rgba(255,255,255,.14);
   color: #f2f7fb;
   font-weight: 750;
@@ -139,16 +148,17 @@
 }
 
 #contact .contact-links a::before {
-  width: 34px;
-  height: 34px;
+  width: 40px;
+  height: 40px;
   display: grid;
   place-items: center;
-  border: 1px solid rgba(157, 198, 238, .30);
+  border: 1px solid rgba(157, 198, 238, .34);
   border-radius: 8px;
-  background: rgba(62, 133, 201, .25);
+  background: rgba(22,119,184,.24);
   color: #eef7ff;
   font-size: 1rem;
   font-weight: 800;
+  box-sizing: border-box;
 }
 
 #contact .contact-links a:nth-child(1)::before { content: "✉"; }
@@ -170,14 +180,14 @@
 }
 
 #contact .contact-links a:hover {
-  padding-left: 10px;
+  padding-left: 14px;
   background: rgba(255,255,255,.055);
   color: #ffffff;
 }
 
 #contact .contact-links a:hover::before {
-  border-color: rgba(180, 215, 247, .48);
-  background: rgba(70, 146, 219, .34);
+  border-color: rgba(185, 221, 248, .55);
+  background: rgba(22,119,184,.36);
 }
 
 #contact .contact-links a:hover::after {
@@ -227,8 +237,14 @@
   }
 
   #contact .contact-links a {
-    grid-template-columns: 34px minmax(0, 1fr) auto;
+    grid-template-columns: 38px minmax(0, 1fr) auto;
+    column-gap: 14px;
     overflow-wrap: anywhere;
+  }
+
+  #contact .contact-links a::before {
+    width: 38px;
+    height: 38px;
   }
 }
 
