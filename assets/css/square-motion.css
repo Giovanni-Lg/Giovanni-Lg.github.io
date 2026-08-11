@@ -1,0 +1,276 @@
+/* Square card system + richer scroll animation layer */
+
+/* Keep containers/cards square across the portfolio */
+.skill-card,
+.project-card,
+.info-card,
+.experience-card,
+.experience-block,
+.experience-summary,
+.stack-highlight,
+.contact-strip,
+.hero-photo,
+.hero-photo-wrap::before {
+  border-radius: 0 !important;
+}
+
+/* Small interactive elements may remain rounded */
+.skill-card li,
+.tags span,
+.domain-grid span,
+.stack-highlight span,
+.btn,
+.block-index,
+.experience-block::before,
+.brand-mark,
+.section-title > span {
+  border-radius: 999px;
+}
+
+.brand-mark,
+.section-title > span,
+.block-index,
+.experience-block::before {
+  border-radius: 8px;
+}
+
+/* Cards stay still on hover: interaction belongs to their content */
+.skill-card:hover,
+.project-card:hover,
+.info-card:hover,
+.experience-card:hover,
+.experience-block:hover {
+  transform: none !important;
+}
+
+.skill-card,
+.project-card,
+.info-card,
+.experience-card,
+.experience-block {
+  transition: border-color .25s ease, box-shadow .25s ease, background-color .25s ease;
+}
+
+/* Subtle visual response without moving the whole card */
+.project-card:hover,
+.info-card:hover {
+  border-color: rgba(37, 99, 235, .32);
+  box-shadow: 0 18px 44px rgba(15, 42, 66, .09);
+}
+
+.experience-block:hover {
+  border-color: color-mix(in srgb, var(--accent) 35%, #dce6ef);
+  box-shadow: 0 16px 36px rgba(16,45,73,.085);
+}
+
+/* More expressive scroll reveal system */
+.reveal {
+  opacity: 0;
+  transform: translateY(28px) scale(.985);
+  filter: blur(5px);
+  transition:
+    opacity .72s cubic-bezier(.2,.72,.2,1),
+    transform .72s cubic-bezier(.2,.72,.2,1),
+    filter .72s ease;
+  will-change: opacity, transform, filter;
+}
+
+.reveal.visible {
+  opacity: 1;
+  transform: none;
+  filter: blur(0);
+}
+
+/* Section headings slide in slightly from the left */
+.section-title.reveal {
+  transform: translateX(-26px);
+  filter: blur(4px);
+}
+
+.section-title.reveal.visible {
+  transform: translateX(0);
+  filter: blur(0);
+}
+
+/* Hero gets a cleaner directional entrance */
+.hero-photo-wrap.reveal {
+  transform: translateX(-32px) scale(.99);
+}
+
+.hero-photo-wrap.reveal.visible {
+  transform: none;
+}
+
+.hero-copy.reveal {
+  transform: translateX(30px);
+}
+
+.hero-copy.reveal.visible {
+  transform: none;
+}
+
+/* About / education cards alternate direction */
+.info-grid .info-card.reveal:nth-child(odd) {
+  transform: translateX(-24px);
+}
+
+.info-grid .info-card.reveal:nth-child(even) {
+  transform: translateX(24px);
+}
+
+.info-grid .info-card.reveal.visible {
+  transform: none;
+}
+
+/* Skills appear in a restrained staggered rhythm */
+#skills .skill-card.reveal {
+  transform: translateY(34px) scale(.975);
+}
+
+#skills .skill-card.reveal:nth-child(2n) {
+  transition-delay: .06s;
+}
+
+#skills .skill-card.reveal:nth-child(3n) {
+  transition-delay: .11s;
+}
+
+#skills .skill-card.reveal:nth-child(4n) {
+  transition-delay: .16s;
+}
+
+#skills .skill-card.reveal.visible {
+  transform: none;
+}
+
+/* Experiences feel like panels entering progressively */
+.experience-card.reveal {
+  transform: translateY(38px);
+  transition-duration: .8s;
+}
+
+.experience-card.reveal.visible {
+  transform: none;
+}
+
+.experience-card.reveal:nth-of-type(2) { transition-delay: .06s; }
+.experience-card.reveal:nth-of-type(3) { transition-delay: .12s; }
+
+/* Projects alternate from the sides */
+.projects-grid .project-card.reveal:nth-child(odd) {
+  transform: translateX(-30px);
+}
+
+.projects-grid .project-card.reveal:nth-child(even) {
+  transform: translateX(30px);
+}
+
+.projects-grid .project-card.reveal.visible {
+  transform: none;
+}
+
+/* Tags/domains cascade into view when their parent reveals */
+.tags.reveal span,
+.domain-grid.reveal span {
+  opacity: 0;
+  transform: translateY(10px);
+  transition: opacity .38s ease, transform .38s ease;
+}
+
+.tags.reveal.visible span,
+.domain-grid.reveal.visible span {
+  opacity: 1;
+  transform: none;
+}
+
+.tags.reveal.visible span:nth-child(2),
+.domain-grid.reveal.visible span:nth-child(2) { transition-delay: .03s; }
+.tags.reveal.visible span:nth-child(3),
+.domain-grid.reveal.visible span:nth-child(3) { transition-delay: .06s; }
+.tags.reveal.visible span:nth-child(4),
+.domain-grid.reveal.visible span:nth-child(4) { transition-delay: .09s; }
+.tags.reveal.visible span:nth-child(5),
+.domain-grid.reveal.visible span:nth-child(5) { transition-delay: .12s; }
+.tags.reveal.visible span:nth-child(6),
+.domain-grid.reveal.visible span:nth-child(6) { transition-delay: .15s; }
+.tags.reveal.visible span:nth-child(n+7),
+.domain-grid.reveal.visible span:nth-child(n+7) { transition-delay: .18s; }
+
+/* Technical pills remain the main hover interaction */
+.skill-card li {
+  position: relative;
+  overflow: hidden;
+  transition:
+    transform .18s cubic-bezier(.2,.75,.2,1),
+    box-shadow .18s ease,
+    color .18s ease,
+    border-color .18s ease,
+    background-color .18s ease;
+}
+
+.skill-card li::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  bottom: -8px;
+  width: 18px;
+  height: 3px;
+  border-radius: 999px;
+  background: var(--skill-accent, #2563eb);
+  opacity: 0;
+  transform: translateX(-50%) scaleX(.3);
+  transition: opacity .18s ease, transform .18s ease, bottom .18s ease;
+}
+
+.skill-card li:hover {
+  transform: translateY(-3px) scale(1.025);
+  color: var(--skill-accent, #2563eb);
+  border-color: color-mix(in srgb, var(--skill-accent, #2563eb) 34%, #d7e3ed);
+  background: color-mix(in srgb, var(--skill-accent, #2563eb) 7%, white);
+  box-shadow: 0 8px 18px color-mix(in srgb, var(--skill-accent, #2563eb) 13%, transparent);
+}
+
+.skill-card li:hover::after {
+  opacity: 1;
+  bottom: 3px;
+  transform: translateX(-50%) scaleX(1);
+}
+
+/* Preserve accessibility */
+@media (prefers-reduced-motion: reduce) {
+  .reveal,
+  .section-title.reveal,
+  .hero-photo-wrap.reveal,
+  .hero-copy.reveal,
+  .info-grid .info-card.reveal,
+  #skills .skill-card.reveal,
+  .experience-card.reveal,
+  .projects-grid .project-card.reveal,
+  .tags.reveal span,
+  .domain-grid.reveal span {
+    opacity: 1 !important;
+    transform: none !important;
+    filter: none !important;
+    transition: none !important;
+  }
+
+  .skill-card li {
+    transition: none !important;
+  }
+}
+
+@media (max-width: 720px) {
+  .hero-photo-wrap.reveal,
+  .hero-copy.reveal,
+  .info-grid .info-card.reveal,
+  .projects-grid .project-card.reveal {
+    transform: translateY(24px);
+  }
+
+  .hero-photo-wrap.reveal.visible,
+  .hero-copy.reveal.visible,
+  .info-grid .info-card.reveal.visible,
+  .projects-grid .project-card.reveal.visible {
+    transform: none;
+  }
+}
