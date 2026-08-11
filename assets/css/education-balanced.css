@@ -1,0 +1,117 @@
+/* Balanced color refinement for Formation / Langues / Qualités */
+
+#education {
+  background: linear-gradient(180deg, #f8fafc 0%, #f5f8fb 100%) !important;
+}
+
+#education .info-card,
+#education .tags {
+  border-color: #d9e2ec !important;
+  background: #ffffff !important;
+  box-shadow: 0 10px 24px rgba(22, 50, 77, .045) !important;
+}
+
+/* Formation */
+#education .info-grid > div:first-child > .info-card {
+  border-left-color: #5b82b8 !important;
+}
+
+#education .info-grid > div:first-child > .info-card::before {
+  background: #f1f5f9 !important;
+}
+
+#education .info-grid > div:first-child > .info-card::after {
+  background: #5b82b8 !important;
+}
+
+#education .info-grid > div:first-child > .info-card p strong {
+  color: #35679f !important;
+}
+
+/* Languages */
+#education .language-icon {
+  background-color: #f1f5f9 !important;
+}
+
+#education .language-copy strong,
+#education .info-grid > div:first-child > .info-card h3 {
+  color: #17324d !important;
+}
+
+#education .language-description,
+#education .info-grid > div:first-child > .info-card p {
+  color: #5b7083 !important;
+}
+
+#education .language-dot {
+  width: 7px !important;
+  height: 7px !important;
+  border-color: #aebed0 !important;
+  background: #ffffff !important;
+}
+
+#education .language-dot.is-active {
+  border-color: #4f78ad !important;
+  background: #4f78ad !important;
+}
+
+/* Qualities */
+#education .tags {
+  background: linear-gradient(180deg, #ffffff 0%, #fbfcfe 100%) !important;
+}
+
+#education .tags span {
+  border-color: #cfdbe7 !important;
+  background: #ffffff !important;
+  color: #3d566c !important;
+  box-shadow: none !important;
+}
+
+#education .tags span::before {
+  background-color: #5a7da8 !important;
+}
+
+#education .tags span:nth-child(2),
+#education .tags span:nth-child(5),
+#education .tags span:nth-child(8) {
+  background: #f7fafc !important;
+}
+
+#education .tags span:nth-child(4),
+#education .tags span:nth-child(7),
+#education .tags span:nth-child(10) {
+  background: #f8fbff !important;
+}
+
+#education .tags span:hover {
+  transform: translateY(-2px) !important;
+  border-color: #8ea9c5 !important;
+  background: #f3f7fb !important;
+  color: #234d74 !important;
+  box-shadow: 0 6px 14px rgba(35, 77, 116, .07) !important;
+}
+
+#education .tags span:hover::before {
+  background-color: #35679f !important;
+}
+
+/* Section labels: keep some color but lower the saturation */
+#education .section-title > span {
+  background: #12395d !important;
+  box-shadow: 0 6px 14px rgba(18, 57, 93, .12) !important;
+}
+
+#education .section-title p {
+  color: #4d78a8 !important;
+}
+
+/* Separators */
+#education .clean-list li {
+  border-bottom-color: #e3e9ef !important;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  #education .tags span:hover {
+    transform: none !important;
+  }
+}
