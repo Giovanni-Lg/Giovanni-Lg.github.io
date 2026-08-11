@@ -83,17 +83,17 @@ const formatExperienceDuration = (startYear, startMonth, endYear = null, endMont
 
 const experienceDurations = [
   {
-    selector: '#experience .experience-card:nth-of-type(2) .experience-aside .date',
+    selector: '#experience .experience-card:nth-of-type(1) .experience-aside .date',
     label: "Septembre 2025 – Aujourd'hui",
     duration: formatExperienceDuration(2025, 8),
   },
   {
-    selector: '#experience .experience-card:nth-of-type(3) .experience-aside .date',
+    selector: '#experience .experience-card:nth-of-type(2) .experience-aside .date',
     label: "Décembre 2024 – Aujourd'hui",
     duration: formatExperienceDuration(2024, 11),
   },
   {
-    selector: '#experience .experience-card:nth-of-type(4) .experience-aside .date',
+    selector: '#experience .experience-card:nth-of-type(3) .experience-aside .date',
     label: '2020 – Décembre 2024',
     duration: '4 ans',
   },
