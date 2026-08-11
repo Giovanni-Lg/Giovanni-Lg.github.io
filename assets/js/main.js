@@ -23,6 +23,11 @@ educationModernTheme.rel = 'stylesheet';
 educationModernTheme.href = 'assets/css/education-modern.css';
 document.head.appendChild(educationModernTheme);
 
+const educationLayoutFixTheme = document.createElement('link');
+educationLayoutFixTheme.rel = 'stylesheet';
+educationLayoutFixTheme.href = 'assets/css/education-layout-fix.css';
+document.head.appendChild(educationLayoutFixTheme);
+
 const menuToggle = document.querySelector('.menu-toggle');
 const mainNav = document.querySelector('.main-nav');
 const navLinks = document.querySelectorAll('.main-nav a');
