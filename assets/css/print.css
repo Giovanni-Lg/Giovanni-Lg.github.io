@@ -1,0 +1,294 @@
+/* PDF export / print support */
+
+.pdf-export-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+  min-height: 42px;
+  padding: 10px 16px;
+  border: 1px solid #b9d9ec;
+  border-radius: 8px;
+  background: #eef7fc;
+  color: #0f5f95;
+  font: inherit;
+  font-weight: 750;
+  cursor: pointer;
+  transition: transform .18s ease, background-color .18s ease, border-color .18s ease, box-shadow .18s ease;
+}
+
+.pdf-export-btn:hover {
+  transform: translateY(-2px);
+  border-color: #1677b8;
+  background: #ffffff;
+  box-shadow: 0 7px 16px rgba(22, 119, 184, .12);
+}
+
+.pdf-export-btn svg {
+  width: 18px;
+  height: 18px;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.9;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+@page {
+  size: A4;
+  margin: 12mm;
+}
+
+@media print {
+  *,
+  *::before,
+  *::after {
+    animation: none !important;
+    transition: none !important;
+    box-shadow: none !important;
+    text-shadow: none !important;
+  }
+
+  html,
+  body {
+    width: 100% !important;
+    min-width: 0 !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    background: #ffffff !important;
+    color: #17324d !important;
+    font-size: 9.5pt !important;
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+  }
+
+  body {
+    zoom: 1 !important;
+  }
+
+  .site-header,
+  .menu-toggle,
+  .main-nav,
+  .skip-link,
+  .hero-actions,
+  .pdf-export-btn,
+  .site-footer,
+  #contact {
+    display: none !important;
+  }
+
+  main,
+  .section,
+  .hero,
+  .section.alt,
+  #education,
+  #projects {
+    background: #ffffff !important;
+  }
+
+  .container {
+    width: 100% !important;
+    max-width: none !important;
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+
+  .hero {
+    padding: 0 0 8mm !important;
+    break-after: page;
+  }
+
+  .hero-grid {
+    display: grid !important;
+    grid-template-columns: 38mm 1fr !important;
+    gap: 7mm !important;
+    align-items: start !important;
+  }
+
+  .hero-photo-wrap {
+    width: 38mm !important;
+    height: auto !important;
+    margin: 0 !important;
+  }
+
+  .hero-photo-wrap::before,
+  .hero::after {
+    display: none !important;
+  }
+
+  .hero-photo {
+    width: 38mm !important;
+    height: 48mm !important;
+    object-fit: cover !important;
+    border-radius: 0 !important;
+  }
+
+  .hero h1 {
+    margin: 0 0 2mm !important;
+    font-size: 25pt !important;
+    line-height: 1 !important;
+  }
+
+  .hero .kicker,
+  .headline {
+    margin-bottom: 2mm !important;
+  }
+
+  .lead {
+    margin: 0 0 2mm !important;
+    font-size: 9pt !important;
+    line-height: 1.45 !important;
+  }
+
+  .contact-strip {
+    display: flex !important;
+    flex-wrap: wrap !important;
+    gap: 2mm 4mm !important;
+    margin-top: 3mm !important;
+    font-size: 8.5pt !important;
+  }
+
+  .section {
+    padding: 7mm 0 !important;
+  }
+
+  .section-title {
+    margin: 0 0 5mm !important;
+  }
+
+  .section-title > span {
+    box-shadow: none !important;
+  }
+
+  .section-title h2 {
+    font-size: 20pt !important;
+    line-height: 1.1 !important;
+  }
+
+  .info-grid,
+  .skills-grid,
+  .projects-grid,
+  #education .info-grid {
+    gap: 4mm !important;
+  }
+
+  .skill-card,
+  .info-card,
+  .project-card,
+  .experience-card,
+  #education .tags {
+    break-inside: avoid !important;
+    page-break-inside: avoid !important;
+    border-color: #cfdde8 !important;
+    background: #ffffff !important;
+  }
+
+  .skill-card,
+  .info-card,
+  .project-card {
+    padding: 4mm !important;
+  }
+
+  .skills-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+  }
+
+  .skill-card li,
+  .project-chip,
+  .experience-body .tech span,
+  .stack-highlight span,
+  #education .tags span {
+    background: #f4f9fc !important;
+    border-color: #c5dce9 !important;
+    color: #234e6c !important;
+  }
+
+  .experience-card {
+    display: grid !important;
+    grid-template-columns: 48mm 1fr !important;
+    margin-bottom: 5mm !important;
+    overflow: visible !important;
+  }
+
+  .experience-aside {
+    padding: 5mm !important;
+    background: #0e3c61 !important;
+    color: #ffffff !important;
+  }
+
+  .experience-aside::before,
+  .experience-aside::after {
+    display: none !important;
+  }
+
+  .experience-aside h3 {
+    margin-top: 5mm !important;
+    font-size: 13pt !important;
+  }
+
+  .experience-body {
+    padding: 5mm !important;
+    background: #ffffff !important;
+  }
+
+  .experience-block {
+    margin-top: 3mm !important;
+    padding: 4mm !important;
+    border-left-color: #1677b8 !important;
+    background: #ffffff !important;
+    break-inside: avoid !important;
+  }
+
+  .experience-block::before,
+  .experience-block::after,
+  .block-index {
+    display: none !important;
+  }
+
+  .experience-block-title {
+    padding: 0 !important;
+  }
+
+  .experience-block ul {
+    columns: 1 !important;
+    margin-bottom: 0 !important;
+  }
+
+  #projects .projects-grid {
+    grid-template-columns: 1fr !important;
+  }
+
+  .project-shell {
+    padding: 4mm !important;
+  }
+
+  .project-details-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+  }
+
+  #education .info-grid {
+    grid-template-columns: 1fr 1fr !important;
+  }
+
+  a {
+    color: inherit !important;
+    text-decoration: none !important;
+  }
+
+  a[href^="http"]::after,
+  a[href^="mailto"]::after,
+  a[href^="tel"]::after {
+    content: none !important;
+  }
+
+  .reveal,
+  .reveal.visible {
+    opacity: 1 !important;
+    transform: none !important;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .pdf-export-btn:hover {
+    transform: none;
+  }
+}
