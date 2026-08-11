@@ -1,59 +1,72 @@
-/* Stronger contrast for technical skills while keeping the balanced theme */
+/* Technical skills — same visual language as the Angular-themed stack badges. */
 
-#skills .skill-card {
+#skills .skills-grid .skill-card {
   background: #ffffff !important;
-  border-color: #c6d4e1 !important;
-  box-shadow: 0 7px 18px rgba(15, 42, 66, .05) !important;
+  border-color: #e0e1e8 !important;
+  box-shadow: 0 7px 18px rgba(15, 15, 17, .045) !important;
 }
 
-#skills .skill-card h3 {
-  color: #17324d !important;
+#skills .skills-grid .skill-card h3 {
+  color: #202334 !important;
   font-weight: 700 !important;
 }
 
-#skills .skill-card h3::after {
+#skills .skills-grid .skill-card h3::after {
   height: 2px !important;
   opacity: .95;
 }
 
-#skills .skill-card li {
-  color: #334e68 !important;
-  background: #ffffff !important;
-  border: 1px solid color-mix(in srgb, var(--skill-accent, #2563eb) 34%, #c7d4df) !important;
-  font-weight: 500 !important;
-  box-shadow: 0 1px 0 rgba(15, 42, 66, .02) !important;
+/* Keep the category accent subtle, like the stack block. */
+#skills .skills-grid .skill-card:nth-child(1) { border-top-color: #0546FF !important; }
+#skills .skills-grid .skill-card:nth-child(2) { border-top-color: #5C44E4 !important; }
+#skills .skills-grid .skill-card:nth-child(3) { border-top-color: #8514F5 !important; }
+#skills .skills-grid .skill-card:nth-child(4) { border-top-color: #F637E3 !important; }
+#skills .skills-grid .skill-card:nth-child(5) { border-top-color: #0546FF !important; }
+#skills .skills-grid .skill-card:nth-child(6) { border-top-color: #5C44E4 !important; }
+#skills .skills-grid .skill-card:nth-child(7) { border-top-color: #8514F5 !important; }
+#skills .skills-grid .skill-card:nth-child(8) { border-top-color: #F637E3 !important; }
+
+/* Chips repeat the same four pastel tones used by Stack principale. */
+#skills .container .skills-grid .skill-card li {
+  font-weight: 600 !important;
+  box-shadow: none !important;
+  border-width: 1px !important;
+  border-style: solid !important;
 }
 
-#skills .skill-card li:hover {
-  transform: translateY(-2px) !important;
-  color: #102f4d !important;
-  background: color-mix(in srgb, var(--skill-accent, #2563eb) 9%, #ffffff) !important;
-  border-color: color-mix(in srgb, var(--skill-accent, #2563eb) 62%, #c7d4df) !important;
-  box-shadow: 0 6px 13px color-mix(in srgb, var(--skill-accent, #2563eb) 13%, transparent) !important;
+#skills .container .skills-grid .skill-card li:nth-of-type(4n+1) {
+  background: #F2F5FF !important;
+  border-color: #CCD5FF !important;
+  color: #2648B8 !important;
 }
 
-/* Slightly stronger top accents, still restrained */
-#skills .skill-card:nth-child(1),
-#skills .skill-card:nth-child(2) {
-  border-top-color: #2563eb !important;
+#skills .container .skills-grid .skill-card li:nth-of-type(4n+2) {
+  background: #F4F1FF !important;
+  border-color: #D8D1F8 !important;
+  color: #5140B3 !important;
 }
 
-#skills .skill-card:nth-child(3) {
-  border-top-color: #6d4cc7 !important;
+#skills .container .skills-grid .skill-card li:nth-of-type(4n+3) {
+  background: #F8F1FF !important;
+  border-color: #E1C9F7 !important;
+  color: #6F28A8 !important;
 }
 
-#skills .skill-card:nth-child(4),
-#skills .skill-card:nth-child(6),
-#skills .skill-card:nth-child(8) {
-  border-top-color: #0f766e !important;
+#skills .container .skills-grid .skill-card li:nth-of-type(4n) {
+  background: #FFF1FD !important;
+  border-color: #F3CDEC !important;
+  color: #9A278A !important;
 }
 
-#skills .skill-card:nth-child(5),
-#skills .skill-card:nth-child(7) {
-  border-top-color: #0e7490 !important;
+#skills .container .skills-grid .skill-card li:hover {
+  transform: translateY(-1px) !important;
+  border-color: #5C44E4 !important;
+  color: #4938B5 !important;
+  box-shadow: 0 6px 14px rgba(92, 68, 228, .09) !important;
+  filter: saturate(1.04) !important;
 }
 
-/* Experience date: slightly larger and easier to scan */
+/* Experience date: slightly larger and easier to scan. */
 .experience-aside .date {
   font-size: 1rem !important;
   line-height: 1.45 !important;
@@ -62,7 +75,8 @@
 }
 
 @media (prefers-reduced-motion: reduce) {
-  #skills .skill-card li {
+  #skills .container .skills-grid .skill-card li,
+  #skills .container .skills-grid .skill-card li:hover {
     transform: none !important;
   }
 }
