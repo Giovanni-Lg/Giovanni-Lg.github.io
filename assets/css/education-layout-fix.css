@@ -1,0 +1,112 @@
+/* Final alignment for the approved Formation / Langues / Qualités mockup */
+
+#education .clean-list li {
+  display: grid !important;
+  grid-template-columns: 42px minmax(0, 1fr) auto !important;
+  align-items: center !important;
+  gap: 14px !important;
+  min-height: 76px !important;
+  padding: 14px 0 !important;
+}
+
+#education .clean-list li::before,
+#education .clean-list li::after {
+  content: none !important;
+  display: none !important;
+}
+
+#education .language-icon {
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  background-color: #eef3ff;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%232f67ff' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'%3E%3Ccircle cx='12' cy='12' r='9'/%3E%3Cpath d='M3 12h18M12 3a15 15 0 0 1 0 18M12 3a15 15 0 0 0 0 18'/%3E%3C/svg%3E");
+  background-size: 20px 20px;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+#education .language-copy {
+  display: flex;
+  align-items: baseline;
+  gap: 5px;
+  min-width: 0;
+  color: #526a7f;
+}
+
+#education .language-copy strong {
+  color: #102f4d;
+  font-size: 1.04rem;
+  font-weight: 800;
+  white-space: nowrap;
+}
+
+#education .language-description {
+  color: #526a7f;
+  white-space: nowrap;
+}
+
+#education .language-rating {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  margin-left: 18px;
+  white-space: nowrap;
+}
+
+#education .language-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  border: 1.5px solid #9eb7d6;
+  background: #fff;
+}
+
+#education .language-dot.is-active {
+  border-color: #2f67ff;
+  background: #2f67ff;
+}
+
+#education .tags {
+  display: flex !important;
+  flex-wrap: wrap !important;
+  align-items: center;
+  gap: 10px !important;
+  padding: 22px !important;
+}
+
+#education .tags span {
+  flex: 0 0 auto;
+  width: auto !important;
+  min-height: 38px;
+  padding-right: 16px !important;
+  white-space: nowrap;
+}
+
+@media (max-width: 1100px) {
+  #education .language-copy {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 2px;
+  }
+
+  #education .language-description {
+    white-space: normal;
+  }
+}
+
+@media (max-width: 640px) {
+  #education .clean-list li {
+    grid-template-columns: 38px minmax(0, 1fr) !important;
+  }
+
+  #education .language-rating {
+    grid-column: 2;
+    margin-left: 0;
+    margin-top: 4px;
+  }
+
+  #education .tags span {
+    white-space: normal;
+  }
+}
