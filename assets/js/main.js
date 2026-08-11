@@ -18,6 +18,11 @@ experienceFixTheme.rel = 'stylesheet';
 experienceFixTheme.href = 'assets/css/experience-fix.css';
 document.head.appendChild(experienceFixTheme);
 
+const experienceTechTheme = document.createElement('link');
+experienceTechTheme.rel = 'stylesheet';
+experienceTechTheme.href = 'assets/css/experience-tech.css';
+document.head.appendChild(experienceTechTheme);
+
 const educationModernTheme = document.createElement('link');
 educationModernTheme.rel = 'stylesheet';
 educationModernTheme.href = 'assets/css/education-modern.css';
@@ -284,6 +289,28 @@ experienceDurations.forEach(({ selector, label, duration }) => {
   if (!dateElement) return;
 
   dateElement.innerHTML = `<span class="experience-period">${label}</span><span class="duration-badge">${duration}</span>`;
+});
+
+const experienceTechBlocks = document.querySelectorAll('#experience .experience-body .tech');
+
+experienceTechBlocks.forEach((techBlock) => {
+  if (techBlock.classList.contains('stack-highlight')) return;
+
+  const label = techBlock.querySelector('strong')?.textContent?.trim() || 'Technologies :';
+  const rawText = techBlock.textContent
+    .replace(label, '')
+    .trim()
+    .replace(/^[:\s]+/, '');
+
+  const technologies = rawText
+    .split(',')
+    .map((item) => item.trim().replace(/\.$/, ''))
+    .filter(Boolean);
+
+  techBlock.innerHTML = `
+    <strong>${label}</strong>
+    ${technologies.map((technology) => `<span>${technology}</span>`).join('')}
+  `;
 });
 
 if (menuToggle && mainNav) {
