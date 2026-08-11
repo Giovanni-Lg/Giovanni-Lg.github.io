@@ -4,46 +4,72 @@
   align-items: center;
   flex-wrap: wrap;
   gap: 8px;
+  padding-left: 34px !important;
   font-size: .98rem !important;
   line-height: 1.45;
   font-weight: 700 !important;
 }
 
+.experience-aside .date::before {
+  content: "◷" !important;
+  position: absolute !important;
+  left: 0 !important;
+  top: 50% !important;
+  transform: translateY(-50%) !important;
+  width: 22px !important;
+  height: 22px !important;
+  display: grid !important;
+  place-items: center !important;
+  border: 1px solid rgba(147, 197, 253, .55) !important;
+  border-radius: 50% !important;
+  background: rgba(59, 130, 246, .18) !important;
+  color: #dbeafe !important;
+  font-size: .82rem !important;
+  line-height: 1 !important;
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, .06) !important;
+}
+
 .experience-period {
-  color: #dceaff;
+  color: #eef6ff;
 }
 
 .duration-badge {
   display: inline-flex;
   align-items: center;
   min-height: 24px;
-  padding: 3px 8px;
-  border: 1px solid rgba(147, 197, 253, .42);
+  padding: 3px 9px;
+  border: 1px solid rgba(147, 197, 253, .52);
   border-radius: 999px;
-  background: rgba(59, 130, 246, .16);
-  color: #bfdbfe;
+  background: rgba(59, 130, 246, .2);
+  color: #dbeafe;
   font-size: .86rem;
   font-weight: 800;
   letter-spacing: .01em;
   white-space: nowrap;
-  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, .02);
+  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, .025);
 }
 
 .experience-card:nth-of-type(3) .duration-badge {
-  background: rgba(14, 165, 233, .15);
-  border-color: rgba(125, 211, 252, .4);
-  color: #bae6fd;
+  background: rgba(14, 165, 233, .18);
+  border-color: rgba(125, 211, 252, .5);
+  color: #d9f3ff;
 }
 
 .experience-card:nth-of-type(4) .duration-badge {
-  background: rgba(45, 212, 191, .13);
-  border-color: rgba(94, 234, 212, .34);
-  color: #99f6e4;
+  background: rgba(45, 212, 191, .16);
+  border-color: rgba(94, 234, 212, .44);
+  color: #ccfbf1;
 }
 
 @media (max-width: 720px) {
   .experience-aside .date {
     gap: 6px;
+    padding-left: 31px !important;
+  }
+
+  .experience-aside .date::before {
+    width: 20px !important;
+    height: 20px !important;
   }
 
   .duration-badge {
