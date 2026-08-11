@@ -1,11 +1,22 @@
-/* Global accent system — based on the approved portfolio blue #1677B8 */
+/* Modern blue-spectrum palette inspired by contemporary Angular visual language.
+   The approved blue #1677B8 remains the primary brand color. */
 :root {
   --portfolio-accent: #1677B8;
   --portfolio-accent-dark: #0f5f95;
-  --portfolio-accent-soft: #eef7fc;
-  --portfolio-accent-soft-2: #f5fafe;
-  --portfolio-accent-border: #b9d9ec;
+  --portfolio-accent-deep: #0b3155;
+  --portfolio-accent-soft: #edf7fc;
+  --portfolio-accent-soft-2: #f6fbfe;
+  --portfolio-accent-border: #b8d9eb;
   --portfolio-accent-muted: #5f93b6;
+
+  --portfolio-cyan: #1ba6c9;
+  --portfolio-cyan-soft: #edfafd;
+  --portfolio-azure: #3f8ed0;
+  --portfolio-azure-soft: #f0f7fd;
+  --portfolio-indigo: #6674c8;
+  --portfolio-indigo-soft: #f4f5fd;
+  --portfolio-violet: #8a6fc2;
+  --portfolio-violet-soft: #f7f3fb;
 }
 
 /* Global contrast accents */
@@ -33,28 +44,64 @@ a:not(.btn):not(.contact-links a) {
 }
 
 .main-nav a::after {
-  background: var(--portfolio-accent) !important;
+  background: linear-gradient(90deg, var(--portfolio-accent), var(--portfolio-cyan)) !important;
 }
 
-/* Skills */
+/* Soft modern surfaces */
+.hero {
+  background:
+    radial-gradient(circle at 12% 18%, rgba(22,119,184,.10), transparent 28%),
+    radial-gradient(circle at 82% 24%, rgba(27,166,201,.07), transparent 24%),
+    linear-gradient(135deg, #f0f8fd 0%, #f7fbfe 48%, #ffffff 100%) !important;
+}
+
+/* Skills — introduce subtle section-specific tones */
 #skills .skill-card {
   border-top-color: var(--portfolio-accent) !important;
 }
 
+#skills .skill-card:nth-child(2),
+#skills .skill-card:nth-child(6) {
+  border-top-color: var(--portfolio-cyan) !important;
+}
+
+#skills .skill-card:nth-child(3) {
+  border-top-color: var(--portfolio-indigo) !important;
+}
+
+#skills .skill-card:nth-child(4),
+#skills .skill-card:nth-child(8) {
+  border-top-color: var(--portfolio-azure) !important;
+}
+
 #skills .skill-card h3::after {
-  background: var(--portfolio-accent) !important;
+  background: currentColor !important;
 }
 
 #skills .skill-card li {
   border-color: #bfd5e4 !important;
   color: #415d72 !important;
+  background: #fff !important;
 }
 
 #skills .skill-card li:hover {
   border-color: var(--portfolio-accent) !important;
   background: var(--portfolio-accent-soft) !important;
   color: #153f5c !important;
-  box-shadow: 0 5px 12px rgba(22, 119, 184, .10) !important;
+  box-shadow: 0 5px 12px rgba(22,119,184,.10) !important;
+}
+
+#skills .skill-card:nth-child(3) li:hover {
+  border-color: color-mix(in srgb, var(--portfolio-indigo) 55%, #cbd8e5) !important;
+  background: var(--portfolio-indigo-soft) !important;
+  color: #46538d !important;
+}
+
+#skills .skill-card:nth-child(2) li:hover,
+#skills .skill-card:nth-child(6) li:hover {
+  border-color: color-mix(in srgb, var(--portfolio-cyan) 52%, #cbd8e5) !important;
+  background: var(--portfolio-cyan-soft) !important;
+  color: #25677a !important;
 }
 
 /* Experience blocks and technology badges */
@@ -63,8 +110,18 @@ a:not(.btn):not(.contact-links a) {
   --accent-soft: var(--portfolio-accent-soft) !important;
 }
 
+.architecture-block {
+  --accent: var(--portfolio-cyan) !important;
+  --accent-soft: var(--portfolio-cyan-soft) !important;
+}
+
+.ai-block {
+  --accent: var(--portfolio-indigo) !important;
+  --accent-soft: var(--portfolio-indigo-soft) !important;
+}
+
 .experience-block::before {
-  background: linear-gradient(145deg, var(--portfolio-accent), var(--portfolio-accent-dark)) !important;
+  background: linear-gradient(145deg, var(--accent), color-mix(in srgb, var(--accent) 72%, var(--portfolio-accent-deep))) !important;
 }
 
 .experience-body .tech,
@@ -80,6 +137,27 @@ a:not(.btn):not(.contact-links a) {
   color: #285a7d !important;
 }
 
+.experience-body .tech span:nth-of-type(4n+2),
+.stack-highlight span:nth-of-type(4n+2) {
+  background: var(--portfolio-cyan-soft) !important;
+  border-color: #c9e7ee !important;
+  color: #276a79 !important;
+}
+
+.experience-body .tech span:nth-of-type(4n+3),
+.stack-highlight span:nth-of-type(4n+3) {
+  background: var(--portfolio-azure-soft) !important;
+  border-color: #ccdeef !important;
+  color: #355f84 !important;
+}
+
+.experience-body .tech span:nth-of-type(4n+4),
+.stack-highlight span:nth-of-type(4n+4) {
+  background: var(--portfolio-indigo-soft) !important;
+  border-color: #d7d9ee !important;
+  color: #505b8e !important;
+}
+
 .experience-body .tech span:hover,
 .stack-highlight span:hover {
   border-color: var(--portfolio-accent) !important;
@@ -87,30 +165,35 @@ a:not(.btn):not(.contact-links a) {
 }
 
 .duration-badge {
-  border-color: rgba(115, 184, 226, .62) !important;
-  background: rgba(22, 119, 184, .22) !important;
+  border-color: rgba(115,184,226,.62) !important;
+  background: rgba(22,119,184,.22) !important;
   color: #e4f4ff !important;
 }
 
 /* Projects */
-#projects .project-card,
-#projects .project-card:nth-child(2) {
+#projects .project-card {
   --project-accent: var(--portfolio-accent) !important;
   --project-soft: var(--portfolio-accent-soft) !important;
   --project-chip: #f5f9fc !important;
+}
+
+#projects .project-card:nth-child(2) {
+  --project-accent: var(--portfolio-indigo) !important;
+  --project-soft: var(--portfolio-indigo-soft) !important;
+  --project-chip: #f7f7fb !important;
 }
 
 .project-category,
 .project-main-icon,
 .project-detail-icon,
 .project-footer-icon {
-  color: var(--portfolio-accent) !important;
+  color: var(--project-accent) !important;
 }
 
 .project-chip:hover {
-  border-color: var(--portfolio-accent-border) !important;
-  color: var(--portfolio-accent-dark) !important;
-  background: var(--portfolio-accent-soft) !important;
+  border-color: color-mix(in srgb, var(--project-accent) 38%, #cbd8e4) !important;
+  color: color-mix(in srgb, var(--project-accent) 82%, #17324d) !important;
+  background: var(--project-soft) !important;
 }
 
 /* Education and languages */
@@ -118,9 +201,17 @@ a:not(.btn):not(.contact-links a) {
   border-left-color: var(--portfolio-accent) !important;
 }
 
+#education .info-grid > div:first-child > .info-card:nth-of-type(3) {
+  border-left-color: var(--portfolio-azure) !important;
+}
+
 #education .info-grid > div:first-child > .info-card::after,
 #education .tags span::before {
   background-color: var(--portfolio-accent) !important;
+}
+
+#education .info-grid > div:first-child > .info-card:nth-of-type(3)::after {
+  background-color: var(--portfolio-azure) !important;
 }
 
 #education .info-grid > div:first-child > .info-card::before {
@@ -132,11 +223,21 @@ a:not(.btn):not(.contact-links a) {
 #education .language-icon {
   width: 36px !important;
   height: 36px !important;
-  background-color: #f3f7fa !important;
+  background-color: #f4f8fb !important;
   border: 1px solid #d8e4ec !important;
   box-shadow: none !important;
-  background-size: 18px 18px !important;
-  filter: saturate(.72) contrast(.96) !important;
+  background-size: 17px 17px !important;
+  filter: saturate(.68) contrast(.94) !important;
+}
+
+#education .clean-list li:nth-child(2) .language-icon {
+  background-color: var(--portfolio-cyan-soft) !important;
+  border-color: #d2e9ef !important;
+}
+
+#education .clean-list li:nth-child(3) .language-icon {
+  background-color: var(--portfolio-indigo-soft) !important;
+  border-color: #d9dced !important;
 }
 
 #education .language-dot {
@@ -148,17 +249,42 @@ a:not(.btn):not(.contact-links a) {
   background: var(--portfolio-accent) !important;
 }
 
+#education .clean-list li:nth-child(2) .language-dot.is-active {
+  border-color: var(--portfolio-cyan) !important;
+  background: var(--portfolio-cyan) !important;
+}
+
+#education .clean-list li:nth-child(3) .language-dot.is-active {
+  border-color: var(--portfolio-indigo) !important;
+  background: var(--portfolio-indigo) !important;
+}
+
 #education .tags span {
   border-color: #c8dce9 !important;
   background: #fff !important;
   color: #39566b !important;
 }
 
+#education .tags span:nth-child(4n+2) {
+  background: var(--portfolio-cyan-soft) !important;
+  border-color: #d4e8ee !important;
+}
+
+#education .tags span:nth-child(4n+3) {
+  background: var(--portfolio-azure-soft) !important;
+  border-color: #d4e2ee !important;
+}
+
+#education .tags span:nth-child(4n+4) {
+  background: var(--portfolio-indigo-soft) !important;
+  border-color: #dcdeee !important;
+}
+
 #education .tags span:hover {
   border-color: var(--portfolio-accent-border) !important;
   background: var(--portfolio-accent-soft) !important;
   color: var(--portfolio-accent-dark) !important;
-  box-shadow: 0 6px 14px rgba(22, 119, 184, .09) !important;
+  box-shadow: 0 6px 14px rgba(22,119,184,.09) !important;
 }
 
 /* Domains / small accent surfaces */
@@ -169,7 +295,7 @@ a:not(.btn):not(.contact-links a) {
 
 /* Contact */
 #contact .kicker {
-  color: #6fb3df !important;
+  color: #72b7df !important;
 }
 
 #contact .contact-links a::after {
@@ -181,14 +307,20 @@ a:not(.btn):not(.contact-links a) {
 }
 
 #contact .contact-links a::before {
-  border-color: rgba(126, 191, 230, .28) !important;
-  background: rgba(22, 119, 184, .22) !important;
+  border-color: rgba(126,191,230,.28) !important;
+  background: rgba(22,119,184,.22) !important;
   color: #dff3ff !important;
+}
+
+#contact .contact-links a:nth-child(3)::before,
+#contact .contact-links a:nth-child(4)::before {
+  background: rgba(102,116,200,.20) !important;
+  border-color: rgba(157,166,222,.24) !important;
 }
 
 /* Keep availability green: it communicates status, not branding. */
 #contact .contact-grid > div:first-child::after {
-  border-color: rgba(81, 201, 149, .58) !important;
-  background: rgba(31, 100, 65, .38) !important;
+  border-color: rgba(81,201,149,.58) !important;
+  background: rgba(31,100,65,.38) !important;
   color: #dfffea !important;
 }
