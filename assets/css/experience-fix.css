@@ -1,0 +1,27 @@
+/* Experience sidebar safety fix */
+
+/* Remove the decorative horizontal line that could overlap company titles */
+.experience-aside::after {
+  display: none !important;
+  content: none !important;
+}
+
+/* Keep clear spacing between period, company and role */
+.experience-aside h3 {
+  margin-top: 28px !important;
+  position: relative;
+  z-index: 2;
+}
+
+.experience-aside .date,
+.experience-aside .experience-period,
+.experience-aside .duration-badge {
+  position: relative;
+  z-index: 2;
+}
+
+@media (max-width: 720px) {
+  .experience-aside h3 {
+    margin-top: 22px !important;
+  }
+}
