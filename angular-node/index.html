@@ -3,40 +3,64 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Portfolio Full Stack de Giovanni Randriamanarina — Angular, Node.js, TypeScript, NestJS, API REST, Docker et CI/CD.">
-  <meta name="theme-color" content="#0F0F11">
+  <base href="/">
+  <meta name="description" content="Portfolio de Giovanni Randriamanarina — Senior Full Stack Engineer spécialisé Angular, TypeScript et développement backend Node.js / NestJS.">
+  <meta name="theme-color" content="#0b3b66">
+  <meta property="og:title" content="Giovanni Randriamanarina — Full Stack Angular · Node.js · TypeScript">
+  <meta property="og:description" content="Angular · TypeScript · Node.js · NestJS · API REST · Architecture Full Stack">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://giovanni-lg.github.io/angular-node/">
   <title>Giovanni Randriamanarina | Angular · Node.js · TypeScript</title>
-  <link rel="icon" href="../favicon.svg" type="image/svg+xml">
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="./styles.css">
+  <link rel="stylesheet" href="assets/css/styles.css">
+  <link rel="stylesheet" href="assets/css/modern.css">
+  <link rel="stylesheet" href="assets/css/skills-motion.css">
+  <link rel="stylesheet" href="assets/css/square-motion.css">
 </head>
 <body>
-  <header class="site-header">
-    <div class="container nav">
-      <a class="brand" href="#top"><span class="brand-mark">GR</span><span>Giovanni Randriamanarina</span></a>
-      <nav aria-label="Navigation principale">
-        <a href="#stack">Stack</a>
-        <a href="#experience">Expérience</a>
+  <a class="skip-link" href="#main">Aller au contenu</a>
+
+  <header class="site-header" id="top">
+    <div class="container nav-wrap">
+      <a class="brand" href="#top" aria-label="Accueil Giovanni Randriamanarina">
+        <span class="brand-mark">GR</span>
+        <span>Giovanni Randriamanarina</span>
+      </a>
+      <button class="menu-toggle" type="button" aria-label="Ouvrir le menu" aria-expanded="false" aria-controls="main-nav">
+        <span></span><span></span><span></span>
+      </button>
+      <nav id="main-nav" class="main-nav" aria-label="Navigation principale">
+        <a href="#about">Profil</a>
+        <a href="#skills">Compétences</a>
+        <a href="#experience">Expériences</a>
         <a href="#projects">Projets</a>
+        <a href="#education">Formation</a>
         <a href="#contact">Contact</a>
       </nav>
     </div>
   </header>
 
-  <main id="top">
+  <main id="main">
     <section class="hero">
       <div class="container hero-grid">
-        <div class="photo-wrap"><img src="../assets/images/profil_In.png" alt="Portrait professionnel de Giovanni Randriamanarina"></div>
-        <div>
-          <p class="eyebrow">FULL STACK ENGINEER</p>
-          <h1>Angular <span>·</span> Node.js <span>·</span> TypeScript</h1>
-          <p class="headline">Développeur Full Stack orienté applications web d'entreprise, API REST et architecture moderne.</p>
-          <p class="lead">Développeur avec plus de 6 ans d'expérience, je conçois et fais évoluer des applications web de bout en bout : interfaces Angular, services backend Node.js / NestJS, APIs REST, persistance, tests, intégration continue et déploiement.</p>
-          <p class="lead">Ma spécialisation Angular me permet d'intervenir sur des frontends complexes et maintenables, tandis que mon expérience backend et DevOps me donne une vision complète du produit et de son cycle de vie.</p>
-          <div class="hero-tags"><span>Angular</span><span>TypeScript</span><span>Node.js</span><span>NestJS</span><span>REST API</span><span>Docker</span><span>CI/CD</span></div>
-          <div class="actions">
+        <div class="hero-photo-wrap reveal">
+          <img class="hero-photo" src="assets/images/profil_In.png" alt="Portrait professionnel de Giovanni Randriamanarina">
+        </div>
+        <div class="hero-copy reveal">
+          <p class="kicker">Senior Full Stack Engineer</p>
+          <h1>Giovanni <span>Randriamanarina</span></h1>
+          <p class="headline">Angular <span>•</span> TypeScript <span>•</span> Node.js / NestJS</p>
+          <p class="lead">Développeur Full Stack avec plus de 6 ans d'expérience, je conçois et fais évoluer des applications web de la compréhension du besoin jusqu'à la mise en production, avec une forte expertise Angular / TypeScript et une expérience backend sur Node.js, NestJS et les API REST.</p>
+          <p class="lead">Mon parcours me permet d'intervenir aussi bien sur des interfaces frontend complexes que sur les services backend, l'intégration d'API, les bases de données, les tests et le déploiement. J'accorde une attention particulière à la qualité du code, à la maintenabilité, à la collaboration avec les équipes produit, QA et DevOps, ainsi qu'à l'amélioration continue.</p>
+          <div class="contact-strip">
+            <a href="mailto:louisgiovannir@gmail.com">louisgiovannir@gmail.com</a>
+            <a href="tel:+261336383025">+261 33 63 830 25</a>
+            <span>Antananarivo, Madagascar</span>
+          </div>
+          <div class="hero-actions">
             <a class="btn primary" href="https://github.com/Giovanni-Lg" target="_blank" rel="noreferrer">GitHub</a>
             <a class="btn secondary" href="https://www.linkedin.com/in/louis-giovanni-randriamanarina-developer/" target="_blank" rel="noreferrer">LinkedIn</a>
           </div>
@@ -44,62 +68,141 @@
       </div>
     </section>
 
-    <section id="stack" class="section">
+    <section class="section alt" id="about">
       <div class="container">
-        <div class="section-head"><span>01</span><div><p>STACK CIBLÉE</p><h2>Compétences directement alignées avec le poste</h2></div></div>
-        <div class="stack-grid">
-          <article><h3>Frontend</h3><div class="chips"><span>Angular</span><span>TypeScript</span><span>RxJS</span><span>Signals</span><span>Reactive Forms</span><span>Angular Material</span><span>PrimeNG</span><span>HTML</span><span>CSS / SCSS</span></div></article>
-          <article><h3>Backend</h3><div class="chips"><span>Node.js</span><span>NestJS</span><span>REST API</span><span>Swagger / OpenAPI</span><span>JWT</span><span>ORM</span><span>Microservices</span><span>Architecture Hexagonale</span></div></article>
-          <article><h3>Quality & Testing</h3><div class="chips"><span>Vitest</span><span>Cypress</span><span>Unit Testing</span><span>Integration Testing</span><span>E2E</span><span>ESLint</span><span>SonarQube</span><span>Code Review</span></div></article>
-          <article><h3>DevOps & Delivery</h3><div class="chips"><span>Docker</span><span>Git</span><span>GitHub</span><span>GitLab</span><span>GitHub Actions</span><span>GitLab CI/CD</span><span>Linux</span><span>Apache</span><span>Nginx</span><span>SSH</span></div></article>
+        <div class="section-title reveal">
+          <span>01</span>
+          <div><p>À propos</p><h2>Un profil technique orienté produit et amélioration continue</h2></div>
+        </div>
+        <div class="info-grid">
+          <div class="info-card reveal">
+            <h3>Mon approche</h3>
+            <p>J'aime travailler sur des produits concrets et durables, comprendre les contraintes métier, identifier les points qui ralentissent les utilisateurs ou les équipes, puis proposer des solutions simples à maintenir.</p>
+            <p>Mon expérience Full Stack me permet de garder une vision globale du système : interface utilisateur, API, base de données, déploiement et exploitation. Ma spécialisation Angular me permet en parallèle d'aller beaucoup plus loin sur les problématiques frontend complexes.</p>
+          </div>
+          <div class="info-card reveal">
+            <h3>Ce que j'apporte à une équipe</h3>
+            <p>Au-delà du développement, je contribue à la structuration du code, aux choix d'architecture, à la résolution d'incidents, à la qualité logicielle et à l'amélioration des workflows de développement.</p>
+            <p>Je m'appuie également sur l'Agentic AI Coding avec Codex, Claude Code et ChatGPT pour accélérer l'analyse, les migrations, le refactoring et les tests, tout en gardant une validation humaine systématique et des contrôles par lint, build et tests automatisés.</p>
+          </div>
         </div>
       </div>
     </section>
 
-    <section id="experience" class="section alt">
+    <section class="section" id="skills">
       <div class="container">
-        <div class="section-head"><span>02</span><div><p>EXPÉRIENCE</p><h2>Développement produit et architecture Full Stack</h2></div></div>
-        <div class="timeline">
-          <article class="experience-card">
-            <aside><p>Depuis septembre 2025</p><h3>Orange Madagascar</h3><strong>Développeur Full Stack / Référent Angular</strong></aside>
-            <div class="experience-copy">
-              <p>Développement et modernisation d'une plateforme CRM d'entreprise. Conception de fonctionnalités, intégration avec les services métiers, résolution d'incidents et évolution progressive du frontend vers une architecture plus modulaire et maintenable.</p>
-              <ul><li>Angular, TypeScript, RxJS et Signals</li><li>Intégration d'APIs métier et gestion des flux de données</li><li>Architecture Microfrontends / Native Federation / Nx</li><li>Tests automatisés, qualité, performance et accessibilité</li><li>Déploiement et exploitation sur environnement Linux / Apache</li></ul>
-              <div class="chips"><span>Angular</span><span>TypeScript</span><span>REST</span><span>Nx</span><span>Vitest</span><span>Cypress</span><span>Apache</span></div>
+        <div class="section-title reveal">
+          <span>02</span>
+          <div><p>Expertise</p><h2>Compétences techniques</h2></div>
+        </div>
+
+        <div class="skills-grid">
+          <article class="skill-card reveal"><h3>Frontend Engineering</h3><ul><li>Angular</li><li>TypeScript</li><li>JavaScript</li><li>Angular Signals</li><li>RxJS</li><li>Standalone Components</li><li>Reactive Forms</li><li>Angular Material</li><li>PrimeNG</li><li>Tailwind CSS</li><li>HTML</li><li>CSS / SCSS</li><li>Responsive Design</li><li>Accessibilité</li><li>Performance frontend</li></ul></article>
+          <article class="skill-card reveal"><h3>Architecture Frontend</h3><ul><li>Microfrontend Architecture</li><li>Native Federation</li><li>Nx Workspace Monorepo</li><li>Shell / Remote Architecture</li><li>Architecture modulaire</li><li>Shared Libraries</li><li>Lazy Loading</li><li>Facade Pattern</li><li>Store / Signals</li><li>Separation of Concerns</li><li>Feature / Data Access / UI architecture</li><li>Dependency boundaries</li><li>Progressive migration from legacy applications</li></ul></article>
+          <article class="skill-card feature reveal"><h3>AI-Assisted Software Engineering</h3><ul><li>Agentic Coding</li><li>OpenAI Codex</li><li>Claude Code</li><li>ChatGPT</li><li>Prompt Engineering</li><li>Context Engineering</li><li>AI-assisted code generation</li><li>AI-assisted debugging</li><li>AI-assisted refactoring</li><li>Codebase analysis with AI agents</li><li>Multi-file implementation with AI agents</li><li>AI-assisted unit test generation</li><li>AI-assisted code review</li><li>AI-assisted migration</li><li>Technical documentation generation</li></ul></article>
+          <article class="skill-card reveal"><h3>Backend</h3><ul><li>Node.js</li><li>NestJS</li><li>Laravel</li><li>PHP</li><li>Java</li><li>REST API</li><li>Swagger / OpenAPI</li><li>ORM</li><li>JWT</li><li>Microservices</li><li>Architecture Hexagonale</li></ul></article>
+          <article class="skill-card reveal"><h3>Testing & Quality</h3><ul><li>Vitest</li><li>Cypress</li><li>Unit Testing</li><li>Integration Testing</li><li>E2E Testing</li><li>TDD</li><li>SonarQube</li><li>ESLint</li><li>Code Review</li><li>Refactoring</li><li>Clean Code</li></ul></article>
+          <article class="skill-card reveal"><h3>DevOps & Infrastructure</h3><ul><li>Docker</li><li>Git</li><li>GitHub</li><li>GitLab</li><li>GitHub Actions</li><li>GitLab CI/CD</li><li>Linux</li><li>Apache</li><li>Nginx</li><li>SSH</li><li>Bash</li><li>PM2</li><li>Deployment</li><li>Hotfix management</li></ul></article>
+          <article class="skill-card reveal"><h3>Databases</h3><ul><li>PostgreSQL</li><li>MySQL</li><li>MariaDB</li><li>MongoDB</li><li>Firebase</li></ul></article>
+          <article class="skill-card reveal"><h3>Méthodologies</h3><ul><li>Agile</li><li>Scrum</li><li>Jira</li><li>Clean Architecture</li><li>Architecture Hexagonale</li><li>SOLID</li><li>Design Patterns</li><li>Continuous Improvement</li></ul></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section alt" id="experience">
+      <div class="container">
+        <div class="section-title reveal"><span>03</span><div><p>Parcours</p><h2>Expériences professionnelles</h2></div></div>
+
+        <article class="experience-card reveal">
+          <div class="experience-aside"><p class="date">Septembre 2025 – Aujourd'hui</p><h3>Orange Madagascar</h3><p>Développeur Full Stack / Référent Angular</p></div>
+          <div class="experience-body orange-experience">
+            <div class="experience-summary">
+              <p class="intro">Je participe au développement et à la modernisation d'une plateforme CRM d'entreprise, avec un rôle à la fois fonctionnel et technique.</p>
+              <p class="intro">Mon travail couvre le développement de nouvelles fonctionnalités, l'amélioration de l'expérience utilisateur, la résolution d'incidents et l'évolution progressive du frontend vers une architecture plus modulaire, performante et maintenable.</p>
+              <p class="intro">L'un des enjeux majeurs consiste à faire coexister l'application historique avec une nouvelle architecture Microfrontend, tout en garantissant la continuité des usages et des mises en production.</p>
             </div>
-          </article>
-          <article class="experience-card">
-            <aside><p>Depuis décembre 2024</p><h3>INGENOSYA</h3><strong>Développeur Full Stack / Expert Angular</strong></aside>
-            <div class="experience-copy"><p>Intervention sur des applications métiers avec une forte composante Angular, participation à la conception technique, à l'amélioration continue, aux revues de code et au maintien de la qualité logicielle.</p><div class="chips"><span>Angular</span><span>TypeScript</span><span>Node.js</span><span>Git</span><span>CI/CD</span></div></div>
-          </article>
-          <article class="experience-card">
-            <aside><p>2020 — Décembre 2024</p><h3>DDNSI @ CUA</h3><strong>Full Stack / Lead Developer / DevOps</strong></aside>
-            <div class="experience-copy"><p>Développement et maintenance d'applications métiers, conception d'APIs et de modules backend, gestion des bases de données et des environnements de déploiement.</p><div class="chips"><span>Angular</span><span>Laravel</span><span>PHP</span><span>MySQL</span><span>Docker</span><span>Linux</span></div></div>
-          </article>
-        </div>
+
+            <section class="experience-block development-block">
+              <div class="experience-block-title">
+                <span class="block-index">01</span>
+                <div><span class="block-kicker">Delivery</span><h4>Développement & qualité</h4></div>
+              </div>
+              <ul><li>Développement d'applications métiers avec Angular et TypeScript.</li><li>Conception de nouvelles fonctionnalités en environnement Agile / Scrum.</li><li>Maintenance corrective et résolution d'anomalies fonctionnelles et techniques.</li><li>Angular Signals et gestion d'état réactive.</li><li>Facade Pattern et séparation UI / domaine / stores / services.</li><li>Optimisation des performances, du lazy loading et de l'expérience utilisateur.</li><li>Amélioration de l'accessibilité et de la qualité frontend.</li><li>Tests automatisés avec Vitest et Cypress.</li><li>Traitement de la dette technique et des anomalies SonarQube.</li><li>Participation aux mises en production, Hotfix et investigations d'incidents.</li></ul>
+            </section>
+
+            <section class="experience-block architecture-block">
+              <div class="experience-block-title">
+                <span class="block-index">02</span>
+                <div><span class="block-kicker">Architecture</span><h4>Architecture & modernisation</h4></div>
+              </div>
+              <p class="block-intro">Modernisation progressive d'un CRM legacy vers une architecture frontend distribuée et modulaire.</p>
+              <ul><li>Architecture Microfrontend basée sur <strong>Native Federation</strong>.</li><li>Structuration du projet dans un <strong>Nx Workspace Monorepo</strong>.</li><li>Architecture Shell / Remotes.</li><li>Mutualisation de librairies Angular partagées.</li><li>Gestion de la coexistence entre application legacy et Microfrontends.</li><li>Migration progressive vers des versions Angular récentes.</li><li>Amélioration des boundaries et de l'indépendance des domaines fonctionnels.</li><li>Configuration et exploitation des environnements Apache.</li></ul>
+            </section>
+
+            <section class="experience-block ai-block">
+              <div class="experience-block-title">
+                <span class="block-index">03</span>
+                <div><span class="block-kicker">AI Engineering</span><h4>AI-Assisted Engineering</h4></div>
+              </div>
+              <p class="block-intro">J'intègre les agents IA dans mon workflow comme outils d'ingénierie pour accélérer l'analyse, le développement et la résolution de problèmes, tout en conservant une validation technique systématique.</p>
+              <ul><li>Analyse de codebase avec <strong>Codex</strong> et <strong>Claude Code</strong>.</li><li>Implémentation de fonctionnalités multi-fichiers.</li><li>Assistance aux migrations Angular / Nx.</li><li>Refactoring et modernisation de code existant.</li><li>Génération et correction de tests.</li><li>Investigation de bugs et analyse de logs.</li><li>Code review et détection d'antipatterns.</li><li>Génération de documentation et plans d'implémentation.</li><li>Validation via tests, lint et build.</li></ul>
+            </section>
+
+            <div class="tech stack-highlight"><strong>Stack principale :</strong><span>Angular</span><span>TypeScript</span><span>Signals</span><span>RxJS</span><span>Native Federation</span><span>Nx</span><span>Vitest</span><span>Cypress</span><span>SonarQube</span><span>Apache</span><span>Codex</span><span>Claude Code</span></div>
+          </div>
+        </article>
+
+        <article class="experience-card reveal">
+          <div class="experience-aside"><p class="date">Décembre 2024 – Aujourd'hui</p><h3>INGENOSYA</h3><p>Développeur Full Stack / Expert Angular</p></div>
+          <div class="experience-body"><p class="intro">Intervention sur plusieurs projets avec une dominante Angular, dans des contextes où la maintenance, l'évolution fonctionnelle et la stabilité des applications sont essentielles.</p><ul><li>Maintenance et évolution de plusieurs projets.</li><li>Développement de nouvelles fonctionnalités frontend.</li><li>Développement et maintenance d'applications Angular.</li><li>Participation au développement backend.</li><li>Correction de bugs fonctionnels et techniques.</li><li>Amélioration de la structure et de la maintenabilité du code.</li><li>Mise à jour de structures de bases de données PostgreSQL.</li><li>Participation aux phases d'analyse technique.</li><li>Développement de composants réutilisables.</li><li>Intégration d'API REST.</li><li>Participation aux revues de code.</li></ul><div class="tech"><strong>Technologies :</strong> Angular, TypeScript, JavaScript, Backend API, PostgreSQL, Git, Agile.</div></div>
+        </article>
+
+        <article class="experience-card reveal">
+          <div class="experience-aside"><p class="date">2020 – Décembre 2024</p><h3>DDNSI @ CUA</h3><p>Développeur Full Stack / Lead Developer / DevOps</p></div>
+          <div class="experience-body"><p class="intro">Cette expérience m'a donné une vision complète du cycle de vie d'une application : écoute des utilisateurs, analyse des besoins, conception, développement, déploiement, exploitation et support. J'ai également eu l'occasion de prendre des responsabilités de coordination technique sur certains projets.</p><ul><li>Analyse des besoins métiers et conception fonctionnelle et technique.</li><li>Analyse et conception de bases de données.</li><li>Développement frontend et backend.</li><li>Développement d'applications internes et maintenance d'API.</li><li>Déploiement d'applications sur serveurs.</li><li>Administration d'environnements Linux, Apache / Nginx et bases de données.</li><li>Maintenance corrective et évolutive.</li><li>Documentation technique et tests du code.</li><li>Formation des utilisateurs et support technique.</li><li>Coordination technique sur certains projets et participation aux choix d'architecture.</li></ul><div class="tech"><strong>Technologies :</strong> Angular, Laravel, PHP, JavaScript, TypeScript, MySQL, PostgreSQL, Linux, Apache, Nginx, Git, Docker.</div></div>
+        </article>
       </div>
     </section>
 
-    <section id="projects" class="section">
+    <section class="section" id="projects">
       <div class="container">
-        <div class="section-head"><span>03</span><div><p>PROJETS</p><h2>Expériences particulièrement pertinentes pour Angular / Node.js</h2></div></div>
+        <div class="section-title reveal"><span>04</span><div><p>Réalisations</p><h2>Projets / Prestations</h2></div></div>
         <div class="projects-grid">
-          <article class="project featured"><p class="project-type">BACKEND & DEVOPS</p><h3>Gando — Application de gestion</h3><p>Développement backend pour un client basé en France avec NestJS / Node.js : APIs métier, MongoDB, paiement Stripe, Docker et automatisation CI/CD avec GitHub Actions.</p><div class="chips"><span>NestJS</span><span>Node.js</span><span>MongoDB</span><span>REST API</span><span>Stripe</span><span>Docker</span><span>GitHub Actions</span><span>SSH</span></div></article>
-          <article class="project"><p class="project-type">FULL STACK</p><h3>Application d'annuaire d'entreprises</h3><p>Conception et réalisation complète : analyse, frontend Angular, backend Laravel, base de données MySQL, déploiement et maintenance.</p><div class="chips"><span>Angular</span><span>Laravel</span><span>MySQL</span><span>REST API</span><span>Deployment</span></div></article>
+          <article class="project-card reveal"><p class="label">Full Stack</p><h3>Application d'annuaire d'entreprises</h3><p>Conception et réalisation complète d'une application d'annuaire d'entreprises, depuis l'analyse fonctionnelle jusqu'au déploiement. Le projet m'a permis de prendre en charge l'ensemble de la chaîne technique et de garder une forte proximité avec le besoin client.</p><h4>Technologies</h4><p>Angular · Laravel · MySQL</p><h4>Périmètre</h4><p>Analyse · Développement frontend · Développement backend · Base de données · Déploiement · Maintenance</p><p class="note">Projet déployé localement à Madagascar.</p></article>
+          <article class="project-card reveal"><p class="label">Backend & DevOps</p><h3>Gando — Application de gestion</h3><p>Développement backend d'une application de gestion pour un client basé en France, avec prise en charge des API métier, de la persistance, du paiement et de plusieurs aspects de déploiement et d'automatisation.</p><h4>Technologies</h4><p>NestJS · Node.js · MongoDB · Stripe · Docker · GitHub Actions · Cloud · SSH</p><h4>Fonctionnalités</h4><p>Utilisateurs · Véhicules · Locations · Clients · Paiements · Facturation · API REST</p><p class="note">Projet réalisé pour un client basé en France.</p></article>
         </div>
       </div>
     </section>
 
-    <section class="section alt fit">
-      <div class="container fit-grid">
-        <div><p class="eyebrow">POUR CE TYPE DE POSTE</p><h2>Pourquoi mon profil correspond</h2><p>Je couvre les trois dimensions centrales du besoin : <strong>Angular / TypeScript côté frontend</strong>, <strong>Node.js / API REST côté backend</strong>, et les pratiques de livraison attendues autour de <strong>Git, Docker, tests et CI/CD</strong>.</p></div>
-        <div class="fit-list"><span>✓ Autonomie technique</span><span>✓ Travail en équipe</span><span>✓ Analyse & résolution de problèmes</span><span>✓ Revues de code</span><span>✓ Amélioration continue</span><span>✓ Culture qualité</span></div>
+    <section class="section alt" id="education">
+      <div class="container info-grid">
+        <div>
+          <div class="section-title reveal"><span>05</span><div><p>Parcours académique</p><h2>Formation</h2></div></div>
+          <div class="info-card reveal"><h3>Licence Professionnelle</h3><p><strong>Université d'Antananarivo — Faculté des Sciences</strong></p><p>2016 – 2020</p><p>Mention : Physique et Applications<br>Parcours : Ingénierie en Physique des Signaux et Systèmes</p></div>
+          <div class="info-card reveal"><h3>Baccalauréat</h3><p><strong>2016</strong> — Série D</p></div>
+        </div>
+        <div>
+          <div class="section-title reveal"><span>06</span><div><p>Communication</p><h2>Langues</h2></div></div>
+          <div class="info-card reveal"><ul class="clean-list"><li><strong>Malagasy</strong> — langue maternelle</li><li><strong>Français</strong> — courant / professionnel</li><li><strong>Anglais</strong> — professionnel écrit et technique</li></ul></div>
+          <div class="section-title small reveal"><span>07</span><div><p>Savoir-être</p><h2>Qualités professionnelles</h2></div></div>
+          <div class="tags reveal"><span>Autonomie</span><span>Adaptabilité</span><span>Esprit d'équipe</span><span>Force de proposition</span><span>Organisation</span><span>Curiosité technique</span><span>Capacité d'analyse</span><span>Résolution de problèmes</span><span>Veille technologique</span><span>Amélioration continue</span></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section expertise-domain">
+      <div class="container"><div class="section-title reveal"><span>08</span><div><p>Spécialisation</p><h2>Domaines d'expertise</h2></div></div><div class="domain-grid reveal"><span>Angular Enterprise Applications</span><span>Frontend Architecture</span><span>Microfrontend Architecture</span><span>Native Federation</span><span>Nx Monorepo</span><span>Angular Signals</span><span>Architecture modulaire</span><span>Modernisation d'applications legacy</span><span>Frontend Performance</span><span>AI-Assisted Software Engineering</span><span>Agentic Coding</span><span>Full Stack Development</span><span>DevOps</span><span>CI/CD</span></div></div>
+    </section>
+
+    <section class="contact" id="contact">
+      <div class="container contact-grid">
+        <div class="reveal"><h2>Échangeons sur votre prochain projet.</h2><p>Je suis ouvert aux opportunités où je peux apporter à la fois mon expertise Angular, ma vision Full Stack, mon expérience d'architecture et ma capacité à faire évoluer des applications existantes de manière pragmatique.</p></div>
+        <div class="contact-links reveal"><a href="mailto:louisgiovannir@gmail.com">louisgiovannir@gmail.com</a><a href="tel:+261336383025">+261 33 63 830 25</a><a href="https://github.com/Giovanni-Lg" target="_blank" rel="noreferrer">github.com/Giovanni-Lg ↗</a><a href="https://www.linkedin.com/in/louis-giovanni-randriamanarina-developer/" target="_blank" rel="noreferrer">LinkedIn ↗</a></div>
       </div>
     </section>
   </main>
 
-  <footer id="contact">
-    <div class="container footer-grid"><div><p class="eyebrow">CONTACT</p><h2>Échangeons sur votre projet</h2><p>Ouvert aux opportunités Full Stack Angular / Node.js / TypeScript.</p></div><div class="contact-links"><a href="mailto:louisgiovannir@gmail.com">louisgiovannir@gmail.com</a><a href="tel:+261336383025">+261 33 63 830 25</a><span>Antananarivo, Madagascar</span><a href="https://github.com/Giovanni-Lg" target="_blank" rel="noreferrer">github.com/Giovanni-Lg</a></div></div>
-  </footer>
+  <footer class="site-footer"><div class="container footer-inner"><span>© <span id="year"></span> Giovanni Randriamanarina</span><a href="#top">Retour en haut ↑</a></div></footer>
+  <script src="assets/js/main.js" defer></script>
 </body>
 </html>
