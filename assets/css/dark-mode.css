@@ -1,4 +1,4 @@
-/* Angular-inspired dark mode */
+/* Angular-inspired dark mode — complete component coverage */
 :root {
   color-scheme: light dark;
 }
@@ -48,14 +48,15 @@ html[data-theme="dark"] .theme-toggle .theme-icon-sun {
 html[data-theme="dark"] {
   color-scheme: dark;
   --dark-bg: #0f0f11;
-  --dark-surface: #15151a;
-  --dark-surface-2: #1a1820;
-  --dark-surface-3: #211b2c;
-  --dark-border: #33313b;
-  --dark-border-soft: #2a2931;
+  --dark-bg-alt: #121216;
+  --dark-surface: #17171c;
+  --dark-surface-2: #1c1a22;
+  --dark-surface-3: #221d2c;
+  --dark-border: #35323e;
+  --dark-border-soft: #2b2932;
   --dark-text: #f5f5f7;
-  --dark-text-soft: #c7c7d0;
-  --dark-text-muted: #9a9aa6;
+  --dark-text-soft: #d0d0d8;
+  --dark-text-muted: #a3a3af;
 }
 
 html[data-theme="dark"] body {
@@ -64,14 +65,14 @@ html[data-theme="dark"] body {
 }
 
 html[data-theme="dark"] .site-header {
-  background: rgba(15, 15, 17, .94) !important;
+  background: rgba(15, 15, 17, .96) !important;
   border-bottom-color: #2a2931 !important;
   box-shadow: 0 8px 24px rgba(0, 0, 0, .18) !important;
 }
 
 html[data-theme="dark"] .brand,
 html[data-theme="dark"] .main-nav a {
-  color: #eeeeF5 !important;
+  color: #f1f1f6 !important;
 }
 
 html[data-theme="dark"] .theme-toggle {
@@ -143,14 +144,15 @@ html[data-theme="dark"] #education {
 html[data-theme="dark"] .section.alt,
 html[data-theme="dark"] #about,
 html[data-theme="dark"] #experience {
-  background: #121216 !important;
+  background: var(--dark-bg-alt) !important;
 }
 
+/* Core cards */
 html[data-theme="dark"] .info-card,
-html[data-theme="dark"] .skill-card,
+html[data-theme="dark"] #skills .skill-card,
 html[data-theme="dark"] .experience-card,
 html[data-theme="dark"] .experience-body,
-html[data-theme="dark"] .project-card,
+html[data-theme="dark"] #projects .project-card,
 html[data-theme="dark"] #education .info-card,
 html[data-theme="dark"] #education .clean-list,
 html[data-theme="dark"] #education .tags {
@@ -164,7 +166,19 @@ html[data-theme="dark"] .info-card h3,
 html[data-theme="dark"] .project-card h3,
 html[data-theme="dark"] #education strong,
 html[data-theme="dark"] .experience-body strong {
-  color: #f5f5f7 !important;
+  color: var(--dark-text) !important;
+}
+
+/* Skills — remove light card surfaces completely */
+html[data-theme="dark"] #skills .skill-card {
+  background: linear-gradient(180deg, #19191f 0%, #15151a 100%) !important;
+  border-left-color: #35323e !important;
+  border-right-color: #35323e !important;
+  border-bottom-color: #35323e !important;
+}
+
+html[data-theme="dark"] #skills .skill-card ul {
+  background: transparent !important;
 }
 
 html[data-theme="dark"] #skills .skill-card li,
@@ -174,55 +188,55 @@ html[data-theme="dark"] .project-chip,
 html[data-theme="dark"] #education .tags span {
   background: #1d1a25 !important;
   border-color: #454052 !important;
-  color: #d9d2ef !important;
+  color: #ded8ef !important;
 }
 
 html[data-theme="dark"] #skills .skill-card li:nth-of-type(6n+1),
 html[data-theme="dark"] .experience-body .tech span:nth-of-type(6n+1),
 html[data-theme="dark"] .stack-highlight span:nth-of-type(6n+1) {
-  background: rgba(5, 70, 255, .14) !important;
-  border-color: rgba(93, 124, 255, .42) !important;
-  color: #aebcff !important;
+  background: rgba(5, 70, 255, .15) !important;
+  border-color: rgba(93, 124, 255, .46) !important;
+  color: #bdc8ff !important;
 }
 
 html[data-theme="dark"] #skills .skill-card li:nth-of-type(6n+2),
 html[data-theme="dark"] .experience-body .tech span:nth-of-type(6n+2),
 html[data-theme="dark"] .stack-highlight span:nth-of-type(6n+2) {
-  background: rgba(92, 68, 228, .16) !important;
-  border-color: rgba(132, 115, 235, .42) !important;
-  color: #c2b7ff !important;
+  background: rgba(92, 68, 228, .18) !important;
+  border-color: rgba(132, 115, 235, .46) !important;
+  color: #cabfff !important;
 }
 
 html[data-theme="dark"] #skills .skill-card li:nth-of-type(6n+3),
 html[data-theme="dark"] .experience-body .tech span:nth-of-type(6n+3),
 html[data-theme="dark"] .stack-highlight span:nth-of-type(6n+3) {
-  background: rgba(133, 20, 245, .15) !important;
-  border-color: rgba(167, 83, 244, .42) !important;
-  color: #d5a9ff !important;
+  background: rgba(133, 20, 245, .17) !important;
+  border-color: rgba(167, 83, 244, .46) !important;
+  color: #ddb9ff !important;
 }
 
 html[data-theme="dark"] #skills .skill-card li:nth-of-type(6n+4),
 html[data-theme="dark"] .experience-body .tech span:nth-of-type(6n+4),
 html[data-theme="dark"] .stack-highlight span:nth-of-type(6n+4) {
-  background: rgba(246, 55, 227, .12) !important;
-  border-color: rgba(246, 111, 232, .36) !important;
-  color: #f5b4ee !important;
+  background: rgba(246, 55, 227, .13) !important;
+  border-color: rgba(246, 111, 232, .40) !important;
+  color: #f8c2f2 !important;
 }
 
 html[data-theme="dark"] #skills .skill-card li:nth-of-type(6n+5),
 html[data-theme="dark"] .experience-body .tech span:nth-of-type(6n+5),
 html[data-theme="dark"] .stack-highlight span:nth-of-type(6n+5) {
-  background: rgba(233, 4, 100, .12) !important;
-  border-color: rgba(239, 84, 147, .34) !important;
-  color: #f5a6c7 !important;
+  background: rgba(233, 4, 100, .13) !important;
+  border-color: rgba(239, 84, 147, .38) !important;
+  color: #f8b4d0 !important;
 }
 
 html[data-theme="dark"] #skills .skill-card li:nth-of-type(6n),
 html[data-theme="dark"] .experience-body .tech span:nth-of-type(6n),
 html[data-theme="dark"] .stack-highlight span:nth-of-type(6n) {
-  background: rgba(242, 172, 4, .10) !important;
-  border-color: rgba(242, 190, 74, .30) !important;
-  color: #f3d182 !important;
+  background: rgba(242, 172, 4, .11) !important;
+  border-color: rgba(242, 190, 74, .34) !important;
+  color: #f5d995 !important;
 }
 
 html[data-theme="dark"] #skills .skill-card li:hover,
@@ -235,6 +249,7 @@ html[data-theme="dark"] #education .tags span:hover {
   box-shadow: 0 7px 18px rgba(92, 68, 228, .14) !important;
 }
 
+/* Experience */
 html[data-theme="dark"] .experience-aside {
   background: linear-gradient(160deg, #111116 0%, #211734 100%) !important;
   border-color: #363040 !important;
@@ -251,13 +266,71 @@ html[data-theme="dark"] .stack-highlight {
   border-color: #36323e !important;
 }
 
-html[data-theme="dark"] .project-divider {
-  background: #312e37 !important;
+/* Projects — override every nested light surface/text */
+html[data-theme="dark"] #projects .project-card,
+html[data-theme="dark"] #projects .project-shell,
+html[data-theme="dark"] #projects .project-header,
+html[data-theme="dark"] #projects .project-details-grid,
+html[data-theme="dark"] #projects .project-detail,
+html[data-theme="dark"] #projects .project-footer {
+  background: var(--dark-surface) !important;
+  color: var(--dark-text) !important;
 }
 
-html[data-theme="dark"] .project-detail,
-html[data-theme="dark"] .project-footer {
-  border-color: #312e37 !important;
+html[data-theme="dark"] #projects .project-card h3,
+html[data-theme="dark"] #projects .project-detail-title,
+html[data-theme="dark"] #projects .project-detail-title span,
+html[data-theme="dark"] #projects .project-footer,
+html[data-theme="dark"] #projects .project-footer span {
+  color: #f2f2f6 !important;
+}
+
+html[data-theme="dark"] #projects .project-summary,
+html[data-theme="dark"] #projects .project-role-list,
+html[data-theme="dark"] #projects .project-role-list li,
+html[data-theme="dark"] #projects .project-detail p {
+  color: #c9c9d3 !important;
+}
+
+html[data-theme="dark"] #projects .project-divider {
+  background: #34313a !important;
+}
+
+html[data-theme="dark"] #projects .project-detail,
+html[data-theme="dark"] #projects .project-footer {
+  border-color: #34313a !important;
+}
+
+html[data-theme="dark"] #projects .project-footer {
+  background: #1b1a20 !important;
+  border: 1px solid #3a3741 !important;
+}
+
+html[data-theme="dark"] #projects .project-chip {
+  background: #25222d !important;
+  border-color: #4b4656 !important;
+  color: #e2dcef !important;
+}
+
+/* Education, languages and qualities */
+html[data-theme="dark"] #education .info-card,
+html[data-theme="dark"] #education .clean-list,
+html[data-theme="dark"] #education .tags {
+  background: #17171c !important;
+}
+
+html[data-theme="dark"] #education .info-card h3,
+html[data-theme="dark"] #education .info-card strong,
+html[data-theme="dark"] #education .clean-list strong,
+html[data-theme="dark"] #education .tags strong {
+  color: #f3f3f7 !important;
+}
+
+html[data-theme="dark"] #education .info-card p,
+html[data-theme="dark"] #education .info-card span,
+html[data-theme="dark"] #education .clean-list li,
+html[data-theme="dark"] #education .language-description {
+  color: #b9bbc7 !important;
 }
 
 html[data-theme="dark"] #education .clean-list li {
@@ -290,6 +363,13 @@ html[data-theme="dark"] #education .clean-list li:nth-child(3) .language-dot.is-
   background: #c56cff !important;
 }
 
+html[data-theme="dark"] #education .tags span {
+  background: #211e29 !important;
+  border-color: #474251 !important;
+  color: #ddd7eb !important;
+}
+
+/* Hero actions */
 html[data-theme="dark"] .hero-actions .btn.primary {
   border-color: #6b70ff !important;
   background: linear-gradient(135deg, #0546ff, #5c44e4) !important;
@@ -308,6 +388,7 @@ html[data-theme="dark"] .hero-actions .btn.secondary:hover {
   color: #efe8ff !important;
 }
 
+/* Contact */
 html[data-theme="dark"] #contact.contact {
   background:
     radial-gradient(circle at 12% 18%, rgba(5, 70, 255, .20), transparent 34%),
