@@ -48,11 +48,6 @@ globalAccentTheme.rel = 'stylesheet';
 globalAccentTheme.href = 'assets/css/global-accent.css';
 document.head.appendChild(globalAccentTheme);
 
-const darkModeTheme = document.createElement('link');
-darkModeTheme.rel = 'stylesheet';
-darkModeTheme.href = 'assets/css/dark-mode.css';
-document.head.appendChild(darkModeTheme);
-
 const printTheme = document.createElement('link');
 printTheme.rel = 'stylesheet';
 printTheme.href = 'assets/css/print.css';
@@ -61,68 +56,34 @@ document.head.appendChild(printTheme);
 const menuToggle = document.querySelector('.menu-toggle');
 const mainNav = document.querySelector('.main-nav');
 const navLinks = document.querySelectorAll('.main-nav a');
-const navWrap = document.querySelector('.nav-wrap');
 const year = document.querySelector('#year');
 
 if (year) {
   year.textContent = String(new Date().getFullYear());
 }
 
-const THEME_STORAGE_KEY = 'portfolio-theme';
-const systemTheme = window.matchMedia('(prefers-color-scheme: dark)');
-const storedTheme = localStorage.getItem(THEME_STORAGE_KEY);
+const heroActions = document.querySelector('.hero-actions');
 
-const getPreferredTheme = () => {
-  if (storedTheme === 'dark' || storedTheme === 'light') return storedTheme;
-  return systemTheme.matches ? 'dark' : 'light';
-};
+if (heroActions) {
+  const pdfButton = document.createElement('button');
+  pdfButton.type = 'button';
+  pdfButton.className = 'pdf-export-btn';
+  pdfButton.setAttribute('aria-label', 'Exporter le portfolio en PDF');
+  pdfButton.innerHTML = `
+    <svg viewBox="0 0 24 24" aria-hidden="true">
+      <path d="M6 9V3h12v6"></path>
+      <path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"></path>
+      <path d="M6 14h12v7H6z"></path>
+    </svg>
+    <span>Exporter en PDF</span>
+  `;
 
-const themeToggle = document.createElement('button');
-themeToggle.type = 'button';
-themeToggle.className = 'theme-toggle';
-themeToggle.innerHTML = `
-  <svg class="theme-icon-moon" viewBox="0 0 24 24" aria-hidden="true">
-    <path d="M20 15.2A8.3 8.3 0 0 1 8.8 4a8.5 8.5 0 1 0 11.2 11.2Z"></path>
-  </svg>
-  <svg class="theme-icon-sun" viewBox="0 0 24 24" aria-hidden="true">
-    <circle cx="12" cy="12" r="4"></circle>
-    <path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"></path>
-  </svg>
-`;
+  pdfButton.addEventListener('click', () => {
+    window.print();
+  });
 
-const updateThemeToggle = (theme) => {
-  const nextTheme = theme === 'dark' ? 'clair' : 'sombre';
-  themeToggle.setAttribute('aria-label', `Activer le mode ${nextTheme}`);
-  themeToggle.setAttribute('title', `Mode ${nextTheme}`);
-};
-
-const applyTheme = (theme) => {
-  document.documentElement.dataset.theme = theme;
-  updateThemeToggle(theme);
-
-  const themeColor = document.querySelector('meta[name="theme-color"]');
-  if (themeColor) {
-    themeColor.setAttribute('content', theme === 'dark' ? '#0F0F11' : '#FFFFFF');
-  }
-};
-
-applyTheme(getPreferredTheme());
-
-if (navWrap) {
-  navWrap.appendChild(themeToggle);
+  heroActions.appendChild(pdfButton);
 }
-
-themeToggle.addEventListener('click', () => {
-  const currentTheme = document.documentElement.dataset.theme === 'dark' ? 'dark' : 'light';
-  const nextTheme = currentTheme === 'dark' ? 'light' : 'dark';
-  localStorage.setItem(THEME_STORAGE_KEY, nextTheme);
-  applyTheme(nextTheme);
-});
-
-systemTheme.addEventListener('change', (event) => {
-  if (localStorage.getItem(THEME_STORAGE_KEY)) return;
-  applyTheme(event.matches ? 'dark' : 'light');
-});
 
 const languageLevels = [5, 4, 3];
 const languageRows = document.querySelectorAll('#education .clean-list li');
